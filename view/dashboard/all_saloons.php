@@ -3,6 +3,8 @@
 require('../../model/bets.model.php');
 require('../../model/rewards.model.php');
 require('../../model/comments.model.php');
+require('../../model/rewards_detail.model.php');
+require('../../controller/functions.controller.php');
 
 $saloons = getAllSaloons();
 $count = 0;

@@ -96,12 +96,15 @@ foreach ($saloon as $member) {
 				$count_rewards = 0;
 				foreach( $rewards as $reward ){
 					$count_rewards++;
+
+					$reward_detail = getRewardDetail( $reward['id'] );
+					$reward_quantity = getRewardQuantity( $reward_detail );
 					?>
 
 						<div class="col-md-2">
-							<?php echo $reward['name']; ?>
-							<button class="btn btn-default" class="plus <?php  ?>"><span class="glyphicon glyphicon-plus"></span></button>
-							<button class="btn btn-default" class="minus"><span class="glyphicon glyphicon-minus"></span></button>
+							<?php echo $reward['name'] . "  "; ?><strong id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></strong>
+							<button class="btn btn-default plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
+							<button class="btn btn-default minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
 						</div>
 
 					<?php

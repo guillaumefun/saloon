@@ -42,3 +42,6 @@ if(!isset($_SESSION['id'])){
 		</div>
 
 	</body>
+
+<script src="../javascript/rewards.js"></script>
+</html>
