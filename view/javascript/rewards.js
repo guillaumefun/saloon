@@ -6,7 +6,10 @@ $(".plus").click(function(e){
             url: "../../controller/add_rewards.controller.php",
             data: { reward_id: id, action: 'plus' },
             success: function(text){
-            	$("#quantity_" + id).html(text);
+            	text = text.split('|');
+                $("#quantity_" + id).html(text[0]);
+                $("#quantity_" + id).attr("title",text[1])
+                                    .tooltip('fixTitle');
             },
         });
 
@@ -20,7 +23,12 @@ $(".minus").click(function(e){
             url: "../../controller/add_rewards.controller.php",
             data: { reward_id: id, action: 'minus' },
             success: function(text){
-            	$("#quantity_" + id).html(text);
+                text = text.split('|');
+                $("#quantity_" + id).attr("title" ,text[1])
+                                    .tooltip('fixTitle');
+            	$("#quantity_" + id).html(text[0]);
+
+
             },
         });
 

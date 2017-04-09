@@ -13,4 +13,20 @@ function getRewardQuantity( $reward_detail ){
 
 }
 
+function printRewardDetail( $reward_detail ){
+
+	$print = '';
+
+	foreach ($reward_detail as $detail) {
+		if($print == ''){
+			$print = $detail['user_login'] . "  " . $detail['quantity'];
+		}else{
+			$print = $print . "<br />" . $detail['user_login'] . "  " . $detail['quantity'];
+		}
+	}
+
+	return $print;
+
+}
+
 ?>

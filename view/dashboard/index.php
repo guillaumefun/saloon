@@ -44,4 +44,9 @@ if(!isset($_SESSION['id'])){
 	</body>
 
 <script src="../javascript/rewards.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({html: true}); 
+});
+</script>
 </html>

@@ -102,7 +102,7 @@ foreach ($saloon as $member) {
 					?>
 
 						<div class="col-md-2">
-							<?php echo $reward['name'] . "  "; ?><strong id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></strong>
+							<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></a>
 							<button class="btn btn-default plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
 							<button class="btn btn-default minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
 						</div>

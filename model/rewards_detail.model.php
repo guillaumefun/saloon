@@ -6,7 +6,7 @@
  *
  */
 
-function addReward( $reward_id, $user_id ){
+function addReward( $reward_id, $user_id, $user_login ){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
 	$req = $db -> prepare('SELECT * FROM rewards_detail WHERE reward_id = :reward_id AND user_id = :user_id');
@@ -19,7 +19,7 @@ function addReward( $reward_id, $user_id ){
 	
 	if(empty($results)){
 
-		createNewRewardDetail( $reward_id, $user_id );
+		createNewRewardDetail( $reward_id, $user_id, $user_login );
 
 	}else{
 
@@ -65,13 +65,14 @@ function removeReward( $reward_id, $user_id ){
 }
 
 
-function createNewRewardDetail( $reward_id, $user_id ){
+function createNewRewardDetail( $reward_id, $user_id, $user_login ){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
-	$req = $db -> prepare(' INSERT INTO rewards_detail( reward_id, user_id, quantity, creation_date, modification_date) VALUES ( :reward_id, :user_id, 1, NOW(), NOW()) ');
+	$req = $db -> prepare(' INSERT INTO rewards_detail( reward_id, user_id, user_login, quantity, creation_date, modification_date) VALUES ( :reward_id, :user_id, :user_login, 1, NOW(), NOW()) ');
 	$req -> execute( array(	
 		'reward_id' => $reward_id, 
-		'user_id' => $user_id
+		'user_id' => $user_id,
+		'user_login' => $user_login
 		) );
 
 }
