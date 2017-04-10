@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	session_start();
 	if(!isset($_SESSION['id'])){
@@ -13,7 +13,7 @@
 		<?php include('header/head.header.php'); ?>
 	</head>
 
-	<body>
+	<body class="fullR">
 
 		<?php include('../header/navbar.header.php'); ?>
 
@@ -23,23 +23,11 @@
 
 			<div class="row form-group">
 
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
+				<div class="col-md-4 col-md-offset-4 input">
 						<label>Récompense</label>
 						<input type="text" name="name" class="form-control" placeholder="Génépi" >
-					
-				</div>
+						<input type="submit" class="btn btn-primary btnGo">
 
-			</div>
-
-			<div class="row form-group">
-
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
-					
-						<input type="submit" class="btn btn-primary">
-
-					
 				</div>
 
 			</div>
@@ -49,4 +37,3 @@
 		</div>
 
 	</body>
-
