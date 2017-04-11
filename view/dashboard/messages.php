@@ -21,7 +21,7 @@
 
 				if($member[1] == 0 ){
 
-					echo '<p>L\'utilisateur "' . urldecode($member[0]) . '" fait maintenant partie du salon</p>'; 
+					echo '<p>L\'utilisateur "' . urldecode($member[0]) . '" fait maintenant partie du salon</p>';
 
 				}elseif ($member[1] == 1) {
 					echo '<p>L\'utilisateur "' . urldecode($member[0]) . '" fait déjà partie du salon</p>';

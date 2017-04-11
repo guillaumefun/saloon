@@ -1,0 +1,35 @@
+/*LOGOUT BUTTON*/
+.logBtn{
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 2em;
+  left: 0; /*utliser padding plutôt. (border-box)*/$
+  margin: 0;
+  padding: 0;
+  padding-left: 2em;
+  width: 250px;
+  list-style: none;
+}
+
+/*CREER SON PROJET + AJOUTER MEMBRES*/
+#creerProjet, #ajoutMembre{
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  z-index: 9999999999999;
+}
+#creerProjetB, #ajoutMembreB{
+  background: #FFFFFF;
+  padding: 2em;
+  border-radius: 0.5em;
+}
+#rideau{
+  position: absolute;
+  background-color: #525760;
+  opacity: 0.7;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+}
