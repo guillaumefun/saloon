@@ -1,4 +1,13 @@
-body{background-color: #eff2f4;}
+body.theSaloon{
+  background-color: #eff2f4;
+  margin:0;
+  padding:0;
+  background: url(https://unsplash.it/1920/1080/?random) no-repeat center fixed;
+  background: url(../resources/img/back1.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;*/
+
+}
 /*LOGOUT BUTTON*/
 .logBtn{
   box-sizing: border-box;
@@ -13,6 +22,23 @@ body{background-color: #eff2f4;}
 }
 .btnS{
   margin-top: 1.8em;
+  margin-bottom: 1em;
+}
+.searchBar{
+  position: fixed;
+  right: -4em;
+  bottom: 8em;
+  opacity: 0.7;
+}
+.links{
+  background-color: rgba(255,255,255, 0.8);
+  padding: 0.5em;
+  display: inline-block;
+  border-radius: 0.5em 0 0 0.5em;
+  position: fixed;
+  right: 0;
+  bottom: 3em;
+
 }
 
 
@@ -45,9 +71,11 @@ _____________________________________________________________*/
 /*BLOCK de GAUCHE
 _________________________________________________________*/
 .mywell{
-  background-color: #FFFFFF;
+  background-color: rgba(255,255,255, 0.6);
   padding: 1em;
   border-radius: 0.5em 0.5em 0px 0px;
+}
+.ombreG{
 }
 .mywellimg{
   padding-left: 0;
@@ -71,12 +99,14 @@ _________________________________________________________*/
 }
 .panel-group .panel{
   border-radius: 0 0 0.5em 0.5em;
+  background-color: rgba(255,255,255, 0.8);
 }
 .panel-default>.panel-heading{
-  background-color: #FFFFFF;
+  background-color: rgba(255,255,255, 0.8);
   border-top: 1px solid #ddd;
   border-radius: 0 0 0.5em 0.5em;
 }
+/*.collapse.in{background-color: rgba(255,255,255, 0.5);}*/
 .comm a:hover, .comm a:focus{
   text-decoration: none;
 }
