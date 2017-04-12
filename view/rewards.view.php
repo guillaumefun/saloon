@@ -15,6 +15,8 @@
 
 	<body class="fullR">
 
+		<?php include('../header/navbar.header.php'); ?>
+
 		<div class="container-fluid">
 
 			<form action="../controller/rewards.controller.php?<?php echo "bet_id=" . $_GET['bet_id'] . "&s=" . $_GET['s'] . "&user_id=" . $_GET['user_id']; ?>" method="post">

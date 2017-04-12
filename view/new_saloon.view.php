@@ -15,6 +15,8 @@
 
 	<body class="full">
 
+		<?php include('../header/navbar.header.php'); ?>
+
 		<div class="container-fluid">
 
 			<form action="../controller/saloon.controller.php" method="post">
