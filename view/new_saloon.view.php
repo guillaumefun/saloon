@@ -1,10 +1,8 @@
 <?php
-
 	session_start();
 	if(!isset($_SESSION['id'])){
 		header('Location: /');
 	}
-
  ?>
 <!DOCTYPE html>
 
@@ -14,8 +12,6 @@
 	</head>
 
 	<body class="full">
-
-		<?php include('../header/navbar.header.php'); ?>
 
 		<div class="container-fluid">
 
