@@ -93,7 +93,7 @@ foreach ($saloon as $member) {
 						<div class="panel-group">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title">
+									<h4 class="panel-title comm">
 										<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge"><?php echo count($comments); ?></span></a>
 									</h4>
 								</div>
@@ -124,7 +124,7 @@ foreach ($saloon as $member) {
 										?>
 
 										<form action="../../controller/add_comment.controller.php?b=<?php  echo $bet['id'] . "&s=" . $saloon_id; ?>" method="post">
-											<div class="row form-group">
+											<div class="row form-group lol">
 												<div class="col-md-7 nop">
 													<input type="text" class="form-control" placeholder="Commentaire" name="comment">
 												</div>
