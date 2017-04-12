@@ -51,9 +51,7 @@
 </div>
 
 <?php
-
 $saloon = getBetsBySaloonID( $saloon_id );
-
 foreach ($saloon as $member) {
 	?>
 
@@ -99,12 +97,10 @@ foreach ($saloon as $member) {
 
 		<div class="row">
 			<?php
-
 			$rewards = getRewardsByBetID( $bet['id'] );
 			$count_rewards = 0;
 			foreach( $rewards as $reward ){
 				$count_rewards++;
-
 				$reward_detail = getRewardDetail( $reward['id'] );
 				$reward_quantity = getRewardQuantity( $reward_detail );
 				?>
@@ -116,7 +112,6 @@ foreach ($saloon as $member) {
 				</div>
 
 				<?php
-
 			}
 			?>
 
@@ -134,9 +129,7 @@ foreach ($saloon as $member) {
 		<!-- Commentaires -->
 
 		<?php
-
 		$comments = getCommentsByBetID( $bet['id'] );
-
 		?>
 
 		<div class="panel-group">
@@ -150,9 +143,7 @@ foreach ($saloon as $member) {
 					<div class="panel-body">
 
 						<?php
-
 						foreach ($comments as $comment) {
-
 							?>
 
 							<div class="row">
@@ -165,9 +156,7 @@ foreach ($saloon as $member) {
 							</div>
 
 							<?php
-
 						}
-
 						if( count($comments) == 0 ){
 							?>
 
@@ -175,7 +164,6 @@ foreach ($saloon as $member) {
 
 							<?php
 						}
-
 						?>
 					</div>
 				</div>
@@ -212,6 +200,4 @@ foreach ($saloon as $member) {
 		<?php
 	}
 }
-
-
 ?>
