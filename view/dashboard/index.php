@@ -18,6 +18,9 @@ if(!isset($_SESSION['id'])){
 	<?php include('../header/head.header.php'); ?>
 	<link rel="stylesheet" type="text/css" href="/Saloon/view/css/structure.css">
 	<link rel="stylesheet" type="text/css" href="/Saloon/view/css/styleDashboard.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Sriracha" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +39,9 @@ if(!isset($_SESSION['id'])){
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div id="rideau" style="display:none; cursor: pointer;"></div> <!--Fond noir quand pop up-->
-				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+				<div class="togBtn">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Changer de Saloon</a>
+				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						<a onclick="HelpBox('creerProjet')" class="btn btn-default">Porte tes couilles et crée un new project!</a>
