@@ -9,13 +9,13 @@ if(!isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
 
-<html>
+<html classe="theSaloon">
 <head>
 	<title>Saloon</title>
 	<?php include('../header/head.header.php'); ?>
 </head>
 
-<body>
+<body class="theSaloon">
 
 
 	<div id="wrapper">
@@ -31,6 +31,18 @@ if(!isset($_SESSION['id'])){
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div id="rideau" style="display:none; cursor: pointer;"></div> <!--Fond noir quand pop up-->
+				<div class="searchBar">
+					<iframe src="https://duckduckgo.com/search.html?width=370&prefill=Comment porter ses couilles?&focus=yes" style="overflow:hidden;margin:0;padding:0;width:428px;height:40px;" frameborder="0"></iframe>
+				</div>
+				<div class="links">
+					<a href="https://facebook.com"><img src="../resources/img/facebook-color.svg" alt=""></a>
+					<a href="https://youtube.com"><img src="../resources/img/youtube-color.svg" alt=""></a>
+					<a href="https://google.com"><img src="../resources/img/google-color.svg" alt=""></a>
+					<a href="https://drive.google.com"><img src="../resources/img/drive-color.svg" alt=""></a>
+					<a href="https://dribbble.com"><img src="../resources/img/dribbble-color.svg" alt=""></a>
+					<a href="https://bitly.com"><img src="../resources/img/bitly-color.svg" alt=""></a>
+					<a href="https://github.com"><img src="../resources/img/Github-black.svg" alt=""></a>
+				</div>
 				<div class="togBtn">
 				</div>
 				<div class="row">

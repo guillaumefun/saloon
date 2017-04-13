@@ -9,10 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/structure.css">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/styleDashboard.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata|Sriracha" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Sriracha|Permanent+Marker|Rock+Salt" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
 
 <!-- Pour recadrer les photos avant de télécharger -->
 <script src="/Saloon/view/resources/cropit/dist/jquery.cropit.js"></script>
-

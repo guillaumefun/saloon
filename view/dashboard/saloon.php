@@ -59,7 +59,7 @@ foreach ($saloon as $member) {
 
 	<div class="row">
 		<div class="col-md-2">
-			<h3><?php echo $member['user']['login']; ?></h3>
+			<h3 style='display: none;'><?php echo $member['user']['login']; ?></h3>
 		</div>
 	</div>
 
@@ -72,7 +72,7 @@ foreach ($saloon as $member) {
 		<div class="projo">
 			<div class="row" style="margin-right:0; margin-left:0;">
 				<!--BLOCK de GAUCGE-->
-				<div class="col-md-8">
+				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-md-2 mywellimg">
 							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $member['user']['id'] . '/profile.png')) echo $member['user']['id'] . '/profile.png'; else echo 'profile.jpg'; ?>">
@@ -147,35 +147,35 @@ foreach ($saloon as $member) {
 				<!--BLOC de DROITE-->
 				<div class="col-md-4">
 					<div class="mywell2">
-					<div class="row">
-						<?php
-						$rewards = getRewardsByBetID( $bet['id'] );
-						$count_rewards = 0;
-						foreach( $rewards as $reward ){
-							$count_rewards++;
-							$reward_detail = getRewardDetail( $reward['id'] );
-							$reward_quantity = getRewardQuantity( $reward_detail );
-							?>
-							<div class="col-md-12 rewa">
-								<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></a>
-								<button class="btn btn-default btn-xs plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
-								<button class="btn btn-default btn-xs minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
-							</div>
-
-
+						<div class="row">
 							<?php
-						}
-						?>
+							$rewards = getRewardsByBetID( $bet['id'] );
+							$count_rewards = 0;
+							foreach( $rewards as $reward ){
+								$count_rewards++;
+								$reward_detail = getRewardDetail( $reward['id'] );
+								$reward_quantity = getRewardQuantity( $reward_detail );
+								?>
+								<div class="col-md-12 rewa">
+									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></a>
+									<button class="btn btn-default btn-xs plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
+									<button class="btn btn-default btn-xs minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
+								</div>
 
-					</div>
 
-					<div class="row">
+								<?php
+							}
+							?>
 
-						<div class="col-md-4">
-							<a href="../rewards.view.php?bet_id=<?php echo $bet['id'] ."&s=" . $saloon_id . "&user_id=" . $bet['user']; ?>"><button class="btn btn-default">Parie un truc!</button></a>
+						</div>
+
+						<div class="row">
+
+							<div class="col-md-4">
+								<a href="../rewards.view.php?bet_id=<?php echo $bet['id'] ."&s=" . $saloon_id . "&user_id=" . $bet['user']; ?>"><button class="btn btn-default">Parie un truc!</button></a>
+							</div>
 						</div>
 					</div>
-				</div>
 				</div> <!--END BLOC de DROITE-->
 
 
