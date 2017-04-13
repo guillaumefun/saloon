@@ -100,5 +100,15 @@ if(!isset($_SESSION['id'])){
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip({html: true});
 });
+
+$('#date').datepicker({
+    format: "dd/mm/yyyy",
+    startDate: "today",
+    maxViewMode: 2,
+    language: "fr",
+    multidate: false,
+    autoclose: true,
+    todayHighlight: true
+});
 </script>
 </html>

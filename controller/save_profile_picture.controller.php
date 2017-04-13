@@ -13,6 +13,10 @@ if(isset($_SESSION['id']) && isset($_POST['dataURL'])){
 	}
 
 	$fileName = '../img/' . $_SESSION['id'] . '/profile.png';
+	if(is_file($fileName)){
+		unlink($fileName);
+	}
+
 	file_put_contents($fileName, $fileData);
 
 	header('Location: ../view/profile/?id=' . $_SESSION['id']);

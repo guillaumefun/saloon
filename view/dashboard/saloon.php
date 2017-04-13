@@ -18,7 +18,7 @@
 			<div class="row form-group">
 				<div class="col-md-4">
 					<label>Deadline</label>
-					<input type="text" class="form-control" placeholder="25/03/2100" name="deadline">
+					<input type="text" class="form-control" placeholder="25/03/2100" name="deadline" id="date">
 				</div>
 			</div>
 			<div class="row form-group">

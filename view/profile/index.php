@@ -51,7 +51,9 @@ if(!isset($_SESSION['id'])){
 										<div class="image-editor">
 									      <input type="file" class="cropit-image-input">
 									      <input type="hidden" id="dataURL" name="dataURL">
-									      <div class="cropit-preview"></div>
+									      <div class="cropit-preview">
+									      	<p>Fais glisser et dépose l'image ici</p>
+									      </div>
 									      <div class="image-size-label">
 									        Resize image
 									      </div>

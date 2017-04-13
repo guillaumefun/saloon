@@ -14,3 +14,7 @@
 
 <!-- Pour recadrer les photos avant de télécharger -->
 <script src="/Saloon/view/resources/cropit/dist/jquery.cropit.js"></script>
+
+<!-- Pour le sélecteur de date -->
+<script src="/Saloon/view/resources/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Saloon/view/resources/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
