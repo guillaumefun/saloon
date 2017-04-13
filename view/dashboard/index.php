@@ -13,12 +13,6 @@ if(!isset($_SESSION['id'])){
 <head>
 	<title>Saloon</title>
 	<?php include('../header/head.header.php'); ?>
-	<link rel="stylesheet" type="text/css" href="/Saloon/view/css/structure.css">
-	<link rel="stylesheet" type="text/css" href="/Saloon/view/css/styleDashboard.css">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Sriracha" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
 </head>
 
 <body>

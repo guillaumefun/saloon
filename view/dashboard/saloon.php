@@ -75,7 +75,7 @@ foreach ($saloon as $member) {
 				<div class="col-md-8">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-md-2 mywellimg">
-							<img class="img-responsive img-circle" src="../resources/profilTest.jpg">
+							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $member['user']['id'] . '/profile.png')) echo $member['user']['id'] . '/profile.png'; else echo 'profile.jpg'; ?>">
 						</div>
 
 						<div class="col-md-10">

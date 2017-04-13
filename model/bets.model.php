@@ -52,6 +52,30 @@ function getBets($saloon_id, $user_id){
 
 }
 
+function getBetsByUserID($user_id){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user ORDER BY id DESC');
+	$req -> execute(array(
+		'user' => $user_id
+		));
+	$results = $req -> fetchAll();
+	return $results;
+
+}
+
+function getDoneBetsCount($user_id){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user AND accomplished = true ORDER BY id DESC');
+	$req -> execute(array(
+		'user' => $user_id
+		));
+	$results = $req -> fetchAll();
+	return count($results);
+
+}
+
 function createNewBet($name, $description, $deadline, $saloon_id){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');

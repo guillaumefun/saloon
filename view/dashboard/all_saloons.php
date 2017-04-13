@@ -1,4 +1,9 @@
 <ul class="sidebar-nav">
+
+	<li>
+			<a href="../profile/?id=<?php echo $_SESSION['id']; ?>"><h3>Mon profil</h3></a>
+	</li>
+
 	<?php
 
 	require('../../model/bets.model.php');
