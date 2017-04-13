@@ -19,7 +19,7 @@ if(isset($_SESSION['id']) && isset($_POST['dataURL'])){
 
 	file_put_contents($fileName, $fileData);
 
-	header('Location: ../view/profile/?id=' . $_SESSION['id']);
+	header('Location: ../view/profile/?id=' . $_SESSION['id'] . '&"'. rand(99,9999));
 
 }
 
