@@ -18,7 +18,7 @@
 			<div class="row form-group">
 				<div class="col-md-4">
 					<label>Deadline</label>
-					<input type="text" class="form-control" placeholder="25/03/2100" name="deadline">
+					<input type="text" class="form-control" placeholder="25/03/2100" name="deadline" id="date">
 				</div>
 			</div>
 			<div class="row form-group">
@@ -75,7 +75,7 @@ foreach ($saloon as $member) {
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-md-2 mywellimg">
-							<img class="img-responsive img-circle" src="../resources/profilTest.jpg">
+							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $member['user']['id'] . '/profile.png')) echo $member['user']['id'] . '/profile.png'; else echo 'profile.jpg'; ?>">
 						</div>
 
 						<div class="col-md-10">

@@ -81,6 +81,22 @@ if(!isset($_SESSION['id'])){
 </body>
 
 <script src="../javascript/rewards.js"></script>
+
 <script src="../javascript/animation.js"></script>
 
+<script>
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip({html: true});
+});
+
+$('#date').datepicker({
+    format: "dd/mm/yyyy",
+    startDate: "today",
+    maxViewMode: 2,
+    language: "fr",
+    multidate: false,
+    autoclose: true,
+    todayHighlight: true
+});
+</script>
 </html>
