@@ -74,14 +74,13 @@ if(!isset($_SESSION['id'])){
 		</div>
 		<!--END POP CHGT PP  -->
 
-
 		<!--PP + infos utilisateur-->
 		<div class="container">
 			<div class="row utilisateur">
 				<div class="col-sm-2 mywellimg">
-					<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
+					<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
 				</div>
-
+				
 				<div class="col-sm-10">
 
 					<h3><?php echo strtoupper($user['login']); ?></h3>
