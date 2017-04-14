@@ -56,8 +56,13 @@ function getBetsFeed( $saloon_id ){
 		$delta_dead = getDateDelta($bet['deadline']);
 		$creation_date = explode(' ', $bet['creation_date']);
 		$delta_creation = getDateDelta($creation_date[0], 'US');
+		if($bet['accomplished'] != 0){
+			$delta_finished = getDateDelta($bet['accomplished']);
+		}else{
+			$delta_finished = '1/01/1970';
+		}
 
-		$order[$i] = min($delta_dead, $delta_creation);
+		$order[$i] = min(abs($delta_dead), abs($delta_creation), abs($delta_finished));
 		$i++;
 
 	}
@@ -86,7 +91,7 @@ function getDateDelta( $date, $date_format = 'EU' ){ //  EU = sous la forme dd/m
 	$now = time();
 
 	$datediff = $time - $now;
-	return abs(floor(($datediff / (60 * 60 * 24))+1)); 
+	return floor(($datediff / (60 * 60 * 24))+1); 
 
 }
 
@@ -103,6 +108,18 @@ function getBets($saloon_id, $user_id){
 	return $results;
 
 
+}
+
+
+function getBet($id){
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM bets WHERE id = :id');
+	$req -> execute(array(
+		'id' => $id
+		));
+
+	$results = $req -> fetch();
+	return $results;
 }
 
 function getBetsByUserID($user_id){
@@ -140,6 +157,18 @@ function createNewBet($name, $description, $deadline, $saloon_id){
 		'saloon_id' => $saloon_id,
 		'deadline' => $deadline
 		) );
+
+}
+
+function setAccomplished( $id, $nb_img ){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('UPDATE bets SET accomplished = :accomplished, nb_img = :nb_img WHERE id = :id');
+	$req -> execute(array(
+		'accomplished' => date("j/m/Y"),
+		'nb_img' => $nb_img,
+		'id' => $id
+		));
 
 }
 
