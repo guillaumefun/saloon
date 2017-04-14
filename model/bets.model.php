@@ -38,6 +38,60 @@ function getBetsBySaloonID( $saloon_id ){
 	return $bets;
 }
 
+function getBetsFeed( $saloon_id ){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM bets WHERE saloon_id = :saloon_id');
+	$req -> execute(array(
+		'saloon_id' => $saloon_id
+		));
+
+	$results = $req -> fetchAll();
+
+	$order = array();
+	$i = 0;
+
+	foreach($results as $bet){
+
+		$delta_dead = getDateDelta($bet['deadline']);
+		$creation_date = explode(' ', $bet['creation_date']);
+		$delta_creation = getDateDelta($creation_date[0], 'US');
+
+		$order[$i] = min($delta_dead, $delta_creation);
+		$i++;
+
+	}
+
+	array_multisort($order, $results); // Trie le tableau results en fonction du réarrangement par ordre croissant du tableau order
+	return $results;
+
+}
+
+function getDateDelta( $date, $date_format = 'EU' ){ //  EU = sous la forme dd/mm/yyyy, US = yyyy-mm-dd
+
+	if($date_format == 'EU'){
+		$date = explode('/', $date);
+
+		if(count($date) != 3) return 'ERROR';
+
+		$time = strtotime($date[0] . "-" . $date[1] . "-" . $date[2]);
+	}else if($date_format == 'US'){
+		$date = explode('-', $date);
+
+		if(count($date) != 3) return 'ERROR';
+
+		$time = strtotime($date[2] . "-" . $date[1] . "-" . $date[0]);
+	}
+
+	$now = time();
+
+	$datediff = $time - $now;
+
+	return abs(floor($datediff / (60 * 60 * 24))); 
+
+}
+
+
 function getBets($saloon_id, $user_id){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');

@@ -53,20 +53,9 @@
 
 
 <?php
-$saloon = getBetsBySaloonID( $saloon_id );
-foreach ($saloon as $member) {
-	?>
-
-	<div class="row">
-		<div class="col-md-2">
-			<h3 style='display: none;'><?php echo $member['user']['login']; ?></h3>
-		</div>
-	</div>
-
-
-	<?php
+$saloon = getBetsFeed( $saloon_id );
+foreach ($saloon as $bet) {
 	$count = 0;
-	foreach ($member['bets'] as $bet ) {
 		?>
 
 		<div class="projo">
@@ -75,7 +64,7 @@ foreach ($saloon as $member) {
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-md-2 mywellimg">
-							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $member['user']['id'] . '/profile.png')) echo $member['user']['id'] . '/profile.png'; else echo 'profile.jpg'; ?>">
+							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
 						</div>
 
 						<div class="col-md-10">
@@ -191,12 +180,12 @@ foreach ($saloon as $member) {
 		<div class="row">
 
 			<div class="col-md-5">
-				<p>Cet utilisateur n'a encore rien parié !!</p>
+				<p>Personne n'a fait de projet encore !</p>
 			</div>
 
 		</div>
 
 		<?php
 	}
-}
+
 ?>

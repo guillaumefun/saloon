@@ -77,7 +77,7 @@ if(!isset($_SESSION['id'])){
 
 				<div class="row">
 					<div class="col-md-2 mywellimg">
-						<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png'; else echo 'profile.jpg'; ?>">
+						<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
 					</div>
 
 					<div class="col-md-4">

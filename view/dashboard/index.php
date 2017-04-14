@@ -37,7 +37,7 @@ if(!isset($_SESSION['id'])){
 					<div class="row">
 							<div class="col-lg-12 text-center">
 									<h1 class="tagline">PorteLES.com</h1>
-									<h3 class="tagline">Porte tes couilles, et tes couilles te porteront</h3>
+									<h3 class="tagline">Porte tes boulliches, et tes boulliches te porteront</h3>
 							</div>
 					</div>
 			</div>
