@@ -68,7 +68,24 @@ foreach ($saloon as $bet) {
 						</div>
 
 						<div class="col-md-10">
-							<h4><?php echo $bet['name']; ?></h4>
+							<h4><?php echo $bet['name']; 
+
+							$delta_dead = getDateDelta($bet['deadline']);
+							$creation_date = explode(' ', $bet['creation_date']);
+							$delta_creation = getDateDelta($creation_date[0], 'US');
+							if($delta_creation < 3){
+								?>
+									<span class="label label-success">Nouveau</span>
+								<?php
+							}
+
+							if($delta_dead < 4){
+								?>
+									<span class="label label-danger">Quasi dead</span>
+								<?php
+							}
+
+							?></h4>
 							<h6>Deadline : <?php echo $bet['deadline']; ?></h6>
 							<h5><?php echo $bet['description']; ?></h5>
 						</div>
