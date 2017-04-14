@@ -9,9 +9,10 @@
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/structure.css">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/sidebar_banner.css">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/styleDashboard.css">
+<link rel="stylesheet" type="text/css" href="/Saloon/view/css/profile.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Sriracha|Permanent+Marker|Rock+Salt" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Kalam:700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
 
 
