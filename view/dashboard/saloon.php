@@ -59,7 +59,7 @@ foreach ($saloon as $bet) {
 		?>
 
 		<div class="projo">
-			<div class="row" style="margin-right:0; margin-left:0;">
+			<div class="row noMarg">
 				<!--BLOCK de GAUCGE-->
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
@@ -68,7 +68,7 @@ foreach ($saloon as $bet) {
 						</div>
 
 						<div class="col-md-10">
-							<h4><?php echo $bet['name']; 
+							<h4><?php echo $bet['name'];
 
 							$delta_dead = getDateDelta($bet['deadline']);
 							$creation_date = explode(' ', $bet['creation_date']);

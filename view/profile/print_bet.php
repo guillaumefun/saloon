@@ -1,9 +1,9 @@
 						<div class="projo">
-							<div class="row" style="margin-right:0; margin-left:0;">
+							<div class="row" style="margin: 0;">
 								<!--BLOCK de GAUCGE-->
 								<div class="col-md-8">
 									<div class="row mywell"> <!-- pp + infos projet-->
-										
+
 
 										<div class="col-md-10">
 											<h4><?php echo $bet['name']; ?></h4>
@@ -20,7 +20,7 @@
 										<div class="panel-group">
 											<div class="panel panel-default">
 												<div class="panel-heading">
-													<h4 class="panel-title comm">
+													<h4 class="panel-title comm comm2">
 														<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge"><?php echo count($comments); ?></span></a>
 													</h4>
 												</div>
