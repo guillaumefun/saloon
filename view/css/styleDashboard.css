@@ -113,3 +113,23 @@ _________________________________________________________*/
   float: right;
   margin: 0.2em;
 }
+
+/* Gallerie
+-----------------------------------*/
+.gallery {
+  width: 100%;
+  float: left;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+.gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 100px;
+}
+.gallery figcaption {
+  display: none;
+}

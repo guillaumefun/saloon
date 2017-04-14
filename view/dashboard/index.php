@@ -88,11 +88,15 @@ if(!isset($_SESSION['id'])){
 
 	</div><!-- endwrapper-->
 
+	<?php include('../resources/photoswipe/photoswipe.php'); ?>
+
 </body>
 
 <script src="../javascript/rewards.js"></script>
 
 <script src="../javascript/animation.js"></script>
+
+<script src="../javascript/gallery.js"></script>
 
 <script>
 $(document).ready(function(){

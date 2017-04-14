@@ -27,11 +27,13 @@ if(!empty($_FILES) && count($_FILES['img']['name']) > 0 && count($_FILES['img'][
 
 	while(!empty($_FILES['img']['name'][$i])){
 				
-		$file_name = $i . '.jpeg';
+		$file_name = $i;
 
 		$resized_img = resize($_FILES['img'], 470, $i);
+		$thumbnail = createThumbnail($_FILES['img'], $i);
 
-		$result = imagejpeg($resized_img, '../img/proofs/' . $bet_id .'/' . $file_name , 100)	;			
+		$result = imagejpeg($resized_img, '../img/proofs/' . $bet_id .'/' . $file_name .'.jpeg' , 100);
+		$result2 = imagejpeg($thumbnail, '../img/proofs/' . $bet_id .'/' . $file_name . '_thumb.jpeg' , 100);			
 				
 		$i++;
 
@@ -40,9 +42,9 @@ if(!empty($_FILES) && count($_FILES['img']['name']) > 0 && count($_FILES['img'][
 	$nb_img = $i;
 
 	setAccomplished($bet_id, $nb_img);
-	header('Location: ../dashboard/');
+	header('Location: ../view/dashboard/');
 }else{
-	header('Location: ../dashboard/');
+	header('Location: ../view/dashboard/');
 }
 
 ?>

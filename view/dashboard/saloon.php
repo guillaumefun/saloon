@@ -104,7 +104,10 @@ foreach ($saloon as $bet) {
 								}
 							?>
 						</div>
+
+						<?php if($bet['nb_img'] > 0) include('show_proof.php'); ?>
 					</div>
+					
 					<div class="row"> <!-- Commentaires -->
 
 						<?php
