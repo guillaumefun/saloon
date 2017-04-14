@@ -2,6 +2,7 @@ body.theSaloon{
   background-color: #eff7fc;
   margin:0;
   padding:0;
+  box-shadow: inset 0px 1px 0px 0px rgba(0,0,0,0.05), inset 0px 1.5px 2.8px 0px rgba(0,0,0,0.1);
   /*background: url(https://unsplash.it/1920/1080/?random) no-repeat center fixed;
   background: url(../resources/img/back2.png) no-repeat center fixed;
   -webkit-background-size: cover;
@@ -74,6 +75,7 @@ _________________________________________________________*/
 }
 .label-danger{background-color: #cc4a62;}
 .label-info{background-color: #62d3f5;}
+.label-success{background-color: #51e3c7}
 .mywell h6{
   font-family: 'Lato', serif;
   font-size: 0.8em;

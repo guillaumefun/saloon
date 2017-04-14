@@ -13,6 +13,7 @@ if(!isset($_SESSION['id'])){
 <head>
 	<title>Saloon</title>
 	<?php include('../header/head.header.php'); ?>
+	<?php include('randomBack.php'); ?>
 </head>
 
 <body class="theSaloon">
