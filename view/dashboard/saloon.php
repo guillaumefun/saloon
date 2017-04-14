@@ -64,7 +64,7 @@ foreach ($saloon as $bet) {
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-md-2 mywellimg">
-							<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
+							<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>">
 						</div>
 
 						<div class="col-md-10">
@@ -73,21 +73,36 @@ foreach ($saloon as $bet) {
 							$delta_dead = getDateDelta($bet['deadline']);
 							$creation_date = explode(' ', $bet['creation_date']);
 							$delta_creation = getDateDelta($creation_date[0], 'US');
-							if($delta_creation < 3){
+							if($delta_creation > -3 && $delta_creation < 1){
 								?>
-									<span class="label label-success">Nouveau</span>
+									<span class="label label-info">Nouveau</span>
 								<?php
 							}
 
-							if($delta_dead < 4){
+							if($delta_dead < 4 && $delta_dead > 0 && $bet['accomplished'] == '0'){
 								?>
 									<span class="label label-danger">Quasi dead</span>
 								<?php
+							}else if($bet['accomplished'] != '0'){
+								?>
+									<span class="label label-success">Fait</span>
+								<?php
 							}
+
 
 							?></h4>
 							<h6>Deadline : <?php echo $bet['deadline']; ?></h6>
 							<h5><?php echo $bet['description']; ?></h5>
+
+							<?php 
+								if($bet['user'] == $_SESSION['id'] && $delta_dead >= 0 && $bet['accomplished'] == '0'){
+
+									?>
+										<a href="../close_bet.view.php?bet_id=<?php echo $bet['id']; ?>"><button class="btn btn-default">J'ai porté mes couilles !</button></a>
+									<?php
+
+								}
+							?>
 						</div>
 					</div>
 					<div class="row"> <!-- Commentaires -->
