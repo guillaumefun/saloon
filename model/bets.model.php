@@ -86,8 +86,7 @@ function getDateDelta( $date, $date_format = 'EU' ){ //  EU = sous la forme dd/m
 	$now = time();
 
 	$datediff = $time - $now;
-
-	return abs(floor($datediff / (60 * 60 * 24))); 
+	return abs(floor(($datediff / (60 * 60 * 24))+1)); 
 
 }
 
