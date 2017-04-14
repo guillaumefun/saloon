@@ -1,8 +1,3 @@
-<ul class="sidebar-nav">
-
-	<li>
-			<a href="../profile/?id=<?php echo $_SESSION['id']; ?>"><h3>Mon profil</h3></a>
-	</li>
 
 	<?php
 
@@ -23,7 +18,7 @@
 
 		?>
 		<li>
-			<a href="?s=<?php echo $saloon['id']; ?>"><button class="btn btn-info"><?php echo $saloon['name']; ?></button></a>
+			<a href="?s=<?php echo $saloon['id']; ?>"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?></p></a>
 		</li>
 		<?php
 
@@ -31,9 +26,6 @@
 
 	?>
 
-	<li>
-		<a href="../new_saloon.view.php"><button class="btn btn-info">Créer un nouveau salon</button></a>
-	</li>
-
-
-</ul>
+	<div class="addSal">
+		<a href="../new_saloon.view.php"><h3><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Créer un nouveau salon</h3></a>
+	</div>
