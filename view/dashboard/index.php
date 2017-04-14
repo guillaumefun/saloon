@@ -23,7 +23,7 @@ if(!isset($_SESSION['id'])){
 			<div class="barre"></div><!--barre verticale (border fait chier)-->
 			<ul class="sidebar-nav">
 				<div class="col-xs-5 pp">
-					<img class="img-responsive img-circle" src="../../img/<?php if(is_file('../../img/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
+					<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
 				</div>
 				<div class="col-xs-6 ppName">
 						<a href="../profile/?id=<?php echo $_SESSION['id']; ?>"><h3><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</h3></a>
