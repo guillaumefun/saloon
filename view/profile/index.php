@@ -20,7 +20,7 @@ if(!isset($_SESSION['id'])){
 
 <body>
 
-	<?php 
+	<?php
 
 		require('../../model/bets.model.php');
 		require('../../model/rewards.model.php');
@@ -29,7 +29,7 @@ if(!isset($_SESSION['id'])){
 		require('../../controller/functions.controller.php');
 
 		$id = htmlspecialchars($_GET['id']);
-		$user = getUser($id);		
+		$user = getUser($id);
 
 		$bets = getBetsByUserID($id);
 
@@ -88,7 +88,7 @@ if(!isset($_SESSION['id'])){
 						$done = getDoneBetsCount($id);
 
 						if($done > 1){
-							echo "Ce gaillard à porter ses couilles pour " . $done . " projets !";
+							echo "Ce gaillard a porté ses couilles pour " . $done . " projets !";
 						}else if($done == 0){
 							echo "Tu n'as pas encore porté tes couilles !";
 						}else{
@@ -110,12 +110,12 @@ if(!isset($_SESSION['id'])){
 				</div>
 
 				<div class="row">
-					<?php 
+					<?php
 
 						$count = 0;
 						foreach($bets as $bet){
 
-							if(!$bet['accomplished']){	
+							if(!$bet['accomplished']){
 								include('print_bet.php');
 								$count++;
 							}
@@ -148,12 +148,12 @@ if(!isset($_SESSION['id'])){
 
 				<div class="row">
 
-					<?php 
+					<?php
 
 						$count = 0;
 						foreach($bets as $bet){
 
-							if($bet['accomplished']){	
+							if($bet['accomplished']){
 								include('print_bet.php');
 								$count++;
 							}
