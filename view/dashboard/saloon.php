@@ -182,16 +182,36 @@ foreach ($saloon as $bet) {
 								?>
 								<div class="col-md-12 rewa">
 									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></a>
+									<?php 
+
+									if($bet['accomplished'] == '0'){
+										?>
 									<button class="btn btn-default btn-xs plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
 									<button class="btn btn-default btn-xs minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
+									<?php 
+										}
+
+									?>
 								</div>
 
 
 								<?php
 							}
+							if($count_rewards == 0){
+								?>
+								<div class="col-md-12 rewa">
+									<p>Il n'y a pas de récompense</p>
+								</div>
+								<?php
+							}
 							?>
 
 						</div>
+
+						<?php 
+
+						if($bet['accomplished'] == '0'){
+										?>
 
 						<div class="row">
 
@@ -199,6 +219,7 @@ foreach ($saloon as $bet) {
 								<a href="../rewards.view.php?bet_id=<?php echo $bet['id'] ."&s=" . $saloon_id . "&user_id=" . $bet['user']; ?>"><button class="btn btn-default">Parie un truc!</button></a>
 							</div>
 						</div>
+						<?php } ?>
 					</div>
 				</div> <!--END BLOC de DROITE-->
 
