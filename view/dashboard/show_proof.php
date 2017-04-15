@@ -1,7 +1,7 @@
 <div class="gallery" itemscope>
 
-	<?php 
-		for ($i=0; $i < $bet['nb_img']; $i++) { 
+	<?php
+		for ($i=0; $i < $bet['nb_img']; $i++) {
 			$img_info = getimagesize('../../img/proofs/' . $bet['id'] . '/' . $i . '.jpeg');
 			?>
 

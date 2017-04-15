@@ -81,7 +81,7 @@ __________________________________________________________________*/
 ________________________________________________________________*/
 .fucking-banner {
     height: 220px;
-    background: url('../resources/img/back2.png') center 88% no-repeat scroll;
+    /*background: url('../resources/img/back2.png') center 88% no-repeat scroll;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

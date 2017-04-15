@@ -85,7 +85,7 @@ foreach ($saloon as $bet) {
 								<?php
 							}else if($bet['accomplished'] != '0'){
 								?>
-									<span class="label label-success">Fait</span>
+									<span class="label label-success">Fait <3</span>
 								<?php
 							}
 
@@ -94,7 +94,7 @@ foreach ($saloon as $bet) {
 							<h6>Deadline : <?php echo $bet['deadline']; ?></h6>
 							<h5><?php echo $bet['description']; ?></h5>
 
-							<?php 
+							<?php
 								if($bet['user'] == $_SESSION['id'] && $delta_dead >= 0 && $bet['accomplished'] == '0'){
 
 									?>
@@ -107,7 +107,7 @@ foreach ($saloon as $bet) {
 
 						<?php if($bet['nb_img'] > 0) include('show_proof.php'); ?>
 					</div>
-					
+
 					<div class="row"> <!-- Commentaires -->
 
 						<?php
