@@ -81,11 +81,17 @@ foreach ($saloon as $bet) {
 
 							if($delta_dead < 4 && $delta_dead > 0 && $bet['accomplished'] == '0'){
 								?>
-									<span class="label label-danger">Quasi dead</span>
+									<span class="label label-warning">Quasi dead</span>
 								<?php
 							}else if($bet['accomplished'] != '0'){
 								?>
 									<span class="label label-success">Fait <3</span>
+								<?php
+							}
+
+							if($delta_dead < 0 && $bet['accomplished'] == '0'){
+								?>
+									<span class="label label-danger">DEAD</span>
 								<?php
 							}
 
@@ -122,7 +128,8 @@ foreach ($saloon as $bet) {
 									</h4>
 								</div>
 								<div id="comments<?php echo $bet['id']; ?>" class="panel-collapse collapse">
-									<div class="panel-body">
+									<div class="panel-body" >
+										<div class="comments" id="<?php echo $bet['id'] . '_' . $saloon_id; ?>">
 
 										<?php
 										foreach ($comments as $comment) {
@@ -146,11 +153,12 @@ foreach ($saloon as $bet) {
 											<?php
 										}
 										?>
+										</div>
 
-										<form action="../../controller/add_comment.controller.php?b=<?php  echo $bet['id'] . "&s=" . $saloon_id; ?>" method="post">
+										<form action="../../controller/add_comment.controller.php?b=<?php  echo $bet['id'] . "&s=" . $saloon_id; ?>" method="post" onsubmit="return saveComment()">
 											<div class="row form-group lol">
 												<div class="col-md-7 nop">
-													<input type="text" class="form-control" placeholder="Commentaire" name="comment">
+													<input type="text" class="form-control" id="<?php echo 'comment_'  . $bet['id']; ?>" placeholder="Commentaire" name="comment">
 												</div>
 												<div class="col-md-5 nop2">
 													<input type="submit" class="btn btn-primary" value="Publier">

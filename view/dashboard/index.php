@@ -99,6 +99,8 @@ if(!isset($_SESSION['id'])){
 
 <script src="../javascript/gallery.js"></script>
 
+<script src="../javascript/comments.js"></script>
+
 <script>
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip({html: true});
@@ -113,5 +115,8 @@ $('#date').datepicker({
     autoclose: true,
     todayHighlight: true
 });
+
+
+
 </script>
 </html>

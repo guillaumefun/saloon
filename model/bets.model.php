@@ -59,7 +59,7 @@ function getBetsFeed( $saloon_id ){
 		if($bet['accomplished'] != 0){
 			$delta_finished = getDateDelta($bet['accomplished']);
 		}else{
-			$delta_finished = '1/01/1970';
+			$delta_finished = 10000;
 		}
 
 		$order[$i] = min(abs($delta_dead), abs($delta_creation), abs($delta_finished));
@@ -137,9 +137,10 @@ function getBetsByUserID($user_id){
 function getDoneBetsCount($user_id){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
-	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user AND accomplished = true ORDER BY id DESC');
+	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user AND accomplished != :accomplished  ORDER BY id DESC');
 	$req -> execute(array(
-		'user' => $user_id
+		'user' => $user_id,
+		'accomplished' => 0
 		));
 	$results = $req -> fetchAll();
 	return count($results);
