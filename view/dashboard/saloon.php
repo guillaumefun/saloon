@@ -124,7 +124,7 @@ foreach ($saloon as $bet) {
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title comm">
-										<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge"><?php echo count($comments); ?></span></a>
+										<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge" id="<?php echo 'badge_'  . $bet['id'] . '_' . $saloon_id; ?>"><?php echo count($comments); ?></span></a>
 									</h4>
 								</div>
 								<div id="comments<?php echo $bet['id']; ?>" class="panel-collapse collapse">
@@ -155,16 +155,14 @@ foreach ($saloon as $bet) {
 										?>
 										</div>
 
-										<form action="../../controller/add_comment.controller.php?b=<?php  echo $bet['id'] . "&s=" . $saloon_id; ?>" method="post" onsubmit="return saveComment()">
 											<div class="row form-group lol">
 												<div class="col-md-7 nop">
-													<input type="text" class="form-control" id="<?php echo 'comment_'  . $bet['id']; ?>" placeholder="Commentaire" name="comment">
+													<input type="text" class="form-control comment_input" id="<?php echo 'comment_'  . $bet['id'] . '_' . $saloon_id; ?>" placeholder="Commentaire" name="comment">
 												</div>
 												<div class="col-md-5 nop2">
-													<input type="submit" class="btn btn-primary" value="Publier">
+													<button class="btn btn-primary comment_form" id="<?php echo 'cf_'  . $bet['id'] . '_' . $saloon_id; ?>">Publier</button>
 												</div>
 											</div>
-										</form>
 									</div>
 
 								</div>

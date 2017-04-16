@@ -27,5 +27,7 @@ if( count($comments) == 0 ){
 		<p style="font-size:0.8em;margin">Il n'y a pas encore de commentaires</p>
 
 	<?php
-		}
+}
+
+echo "|" . count($comments);
 	?>
