@@ -8,11 +8,11 @@ if(isset($_SESSION['id']) && isset($_POST['dataURL'])){
 	$img = str_replace(' ', '+', $img);
 	$fileData = base64_decode($img);
 
-	if(!is_dir('../img/' . $_SESSION['id'])){ // crée un nouveau dossier pour l'utilisateur si nécessaire
-		mkdir('../img/' . $_SESSION['id']);
+	if(!is_dir('../img/profiles/' . $_SESSION['id'])){ // crée un nouveau dossier pour l'utilisateur si nécessaire
+		mkdir('../img/profiles/' . $_SESSION['id']);
 	}
 
-	$fileName = '../img/' . $_SESSION['id'] . '/profile.png';
+	$fileName = '../img/profiles/' . $_SESSION['id'] . '/profile.png';
 	if(is_file($fileName)){
 		unlink($fileName);
 	}

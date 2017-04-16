@@ -79,9 +79,9 @@ foreach ($saloon as $bet) {
 								<?php
 							}
 
-							if($delta_dead < 4 && $delta_dead > 0 && $bet['accomplished'] == '0'){
+							if($delta_dead < 4 && $delta_dead >= 0 && $bet['accomplished'] == '0'){
 								?>
-									<span class="label label-warning">Quasi dead</span>
+									<span class="label label-danger">Quasi dead</span>
 								<?php
 							}else if($bet['accomplished'] != '0'){
 								?>
