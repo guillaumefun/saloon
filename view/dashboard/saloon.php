@@ -189,7 +189,7 @@ foreach ($saloon as $bet) {
 								$reward_quantity = getRewardQuantity( $reward_detail );
 								?>
 								<div class="col-md-12 rewa">
-									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>"><?php echo $reward_quantity; ?></a>
+									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>" class="rewards"><?php echo $reward_quantity; ?></a>
 									<?php 
 
 									if($bet['accomplished'] == '0'){
