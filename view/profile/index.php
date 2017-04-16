@@ -233,5 +233,6 @@ $(document).ready(function(){
 </script>
 <script src="../javascript/rewards.js"></script>
 <script src="../javascript/popup.js"></script>
+<script src="../javascript/comments.js"></script>
 
 </html>

@@ -21,12 +21,12 @@
 											<div class="panel panel-default">
 												<div class="panel-heading">
 													<h4 class="panel-title comm comm2">
-														<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge"><?php echo count($comments); ?></span></a>
+														<a data-toggle="collapse" href="#comments<?php echo $bet['id']; ?>">Comments <span class="badge" id="<?php echo 'badge_'  . $bet['id'] . '_' . $saloon_id; ?>"><?php echo count($comments); ?></span></a>
 													</h4>
 												</div>
 												<div id="comments<?php echo $bet['id']; ?>" class="panel-collapse collapse">
 													<div class="panel-body">
-
+														<div class="comments" id="<?php echo $bet['id'] . '_' . $bet['saloon_id']; ?>">
 														<?php
 														foreach ($comments as $comment) {
 															?>
@@ -49,17 +49,16 @@
 															<?php
 														}
 														?>
+														</div>
 
-														<form action="../../controller/add_comment.controller.php?b=<?php  echo $bet['id'] . "&s=" . $saloon_id; ?>" method="post">
-															<div class="row form-group lol">
-																<div class="col-md-7 nop">
-																	<input type="text" class="form-control" placeholder="Commentaire" name="comment">
-																</div>
-																<div class="col-md-5 nop2">
-																	<input type="submit" class="btn btn-primary" value="Publier">
-																</div>
+														<div class="row form-group lol">
+															<div class="col-md-7 nop">
+																<input type="text" autocomplete="off" class="form-control comment_input" id="<?php echo 'comment_'  . $bet['id'] . '_' . $bet['saloon_id']; ?>" placeholder="Commentaire" name="comment">
 															</div>
-														</form>
+															<div class="col-md-5 nop2">
+																<button class="btn btn-primary comment_form" id="<?php echo 'cf_'  . $bet['id'] . '_' . $bet['saloon_id']; ?>">Publier</button>
+															</div>
+														</div>
 													</div>
 
 												</div>

@@ -157,7 +157,7 @@ foreach ($saloon as $bet) {
 
 											<div class="row form-group lol">
 												<div class="col-md-7 nop">
-													<input type="text" class="form-control comment_input" id="<?php echo 'comment_'  . $bet['id'] . '_' . $saloon_id; ?>" placeholder="Commentaire" name="comment">
+													<input type="text" autocomplete="off" class="form-control comment_input" id="<?php echo 'comment_'  . $bet['id'] . '_' . $saloon_id; ?>" placeholder="Commentaire" name="comment">
 												</div>
 												<div class="col-md-5 nop2">
 													<button class="btn btn-primary comment_form" id="<?php echo 'cf_'  . $bet['id'] . '_' . $saloon_id; ?>">Publier</button>
