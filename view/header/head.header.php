@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="/Saloon/view/resources/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
 
 <!-- Pour la gallerie photo -->
-<link rel="stylesheet" href="/Saloon/view/resources/photoswipe/dist/photoswipe.css"> 
-<link rel="stylesheet" href="/Saloon/view/resources/photoswipe/dist/default-skin/default-skin.css"> 
-<script src="/Saloon/view/resources/photoswipe/dist/photoswipe.min.js"></script> 
-<script src="/Saloon/view/resources/photoswipe/dist/photoswipe-ui-default.min.js"></script> 
+<link rel="stylesheet" href="/Saloon/view/resources/photoswipe/dist/photoswipe.css">
+<link rel="stylesheet" href="/Saloon/view/resources/photoswipe/dist/default-skin/default-skin.css">
+<script src="/Saloon/view/resources/photoswipe/dist/photoswipe.min.js"></script>
+<script src="/Saloon/view/resources/photoswipe/dist/photoswipe-ui-default.min.js"></script>

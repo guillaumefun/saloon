@@ -11,70 +11,116 @@ if(isset($_SESSION['id'])){
 <html>
 <head>
 	<?php include('header/head.header.php'); ?>
+	<link rel="stylesheet" href="/Saloon/view/css/form-elements.css">
+	<link rel="stylesheet" href="/Saloon/view/css/style.css">
 </head>
 
-<body>
+<body class="bg">
 
-	<div class="container-fluid">
+	<!-- Top content -->
+	<div class="top-content">
 
-		<form action="../controller/login.controller.php" method="post">
+			<div class="inner-bg">
+					<div class="container">
 
-			<div class="row gif">
-				<div class="col-md-4 col-md-offset-4">
-					<img class="img-responsive img-circle" src="https://j.gifs.com/98zQDJ.gif">
-				</div>
-			</div>
+							<div class="row">
+									<div class="col-sm-8 col-sm-offset-2 text">
+											<img class="licorne" src="resources/img/licorne.png">
+											<h1><strong>Licorne.life</strong></h1>
+											<div class="description">
+												<p>
+													Toi aussi t'as envie de devenir aussi <strong>Badass</strong> qu'une
+													<strong>Licorne</strong> mais ta flemme t'empêche d'atteindre tes
+													objectifs et de tenir tes résolutions?
+													Licorne.life te permet de créer des "Saloon" avec tes potes pour que vous
+													vous poussiez mutuellement à atteindre vos fucking objectifs de vie!
 
-			<div class="row form-group">
+													</details>
+												</p>
+											</div>
+									</div>
+							</div>
 
-				<div class="col-md-5"></div>
-				<div class="col-md-2">
+							<div class="row">
+									<div class="col-sm-6 col-sm-offset-3">
 
-					<div class="input-group">
-						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						<input type="text" name="login" class="form-control" placeholder="Login" >
+										<div class="form-box">
+											<div class="form-top">
+												<div class="form-top-left">
+													<h3>Se connecter</h3>
+														<p>Entre ton Login et ton mdp pour te connecter:</p>
+												</div>
+												<div class="form-top-right">
+													<i class="fa fa-key"></i>
+												</div>
+												</div>
+												<div class="form-bottom">
+											<form action="../controller/login.controller.php" method="post" class="login-form">
+												<div class="form-group">
+													<label class="sr-only" for="form-username">Username</label>
+														<input type="text" name="login" class="form-control" placeholder="Login" >
+													</div>
+													<div class="form-group">
+														<label class="sr-only" for="form-password">Password</label>
+														<input type="password" name="password" class="form-control" placeholder="Mot de passe" >
+													</div>
+													<button type="submit" class="btn">Sign in!</button>
+
+											</form>
+										</div>
+									</div>
+
+								<div class="social-login">
+											<a href="register.view.php"><h3>Pas encore inscrit?</h3></a>
+											<!--<div class="social-login-buttons">
+												<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+													<i class="fa fa-facebook"></i> Facebook
+												</a>
+												<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+													<i class="fa fa-twitter"></i> Twitter
+												</a>
+												<a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+													<i class="fa fa-google-plus"></i> Google Plus
+												</a>
+											</div>
+										</div>
+
+									</div>-->
+
+
+									</div>
+							</div>
+
 					</div>
-
-				</div>
-
 			</div>
-
-			<div class="row form-group">
-
-				<div class="col-md-2 col-md-offset-5">
-
-					<div class="input-group">
-						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						<input type="password" name="password" class="form-control" >
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row form-group">
-
-				<div class="col-md-2 col-md-offset-5">
-
-					<input type="submit" class="btn btn-primary">
-
-				</div>
-
-			</div>
-
-		</form>
-
-		<div class="row form-group">
-
-
-			<div class="col-md-2 col-md-offset-5">
-
-				<a href="register.view.php"><button class="btn btn-default">Pas encore inscris ?</button></a>
-
-			</div>
-
-		</div>
-
 
 	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="footer-border"></div>
+					<p>Made with love by two unicorns 💙
+						(En anglais ça claque plus) <i class="fa fa-smile-o"></i></p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+	<!--[if lt IE 10]>
+			<script src="assets/js/placeholder.js"></script>
+	<![endif]-->
+
+</body>
 
 </body>
