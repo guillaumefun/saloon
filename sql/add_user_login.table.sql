@@ -1,0 +1,1 @@
+ALTER TABLE `rewards_detail` ADD `user_login` VARCHAR(255) NOT NULL AFTER `user_id`;

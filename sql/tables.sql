@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
--- Généré le :  Mer 05 Avril 2017 à 11:33
+-- Généré le :  Dim 23 Avril 2017 à 14:56
 -- Version du serveur :  5.5.42
 -- Version de PHP :  5.6.10
 
@@ -27,7 +27,8 @@ CREATE TABLE `bets` (
   `user` varchar(11) NOT NULL,
   `saloon_id` varchar(11) NOT NULL,
   `deadline` varchar(50) DEFAULT NULL,
-  `accomplished` tinyint(1) NOT NULL DEFAULT '0',
+  `accomplished` varchar(11) NOT NULL DEFAULT '0',
+  `nb_img` int(1) NOT NULL,
   `modification_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `creation_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -75,6 +76,7 @@ CREATE TABLE `rewards_detail` (
   `id` bigint(20) unsigned NOT NULL,
   `reward_id` varchar(11) NOT NULL,
   `user_id` varchar(11) NOT NULL,
+  `user_login` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL,
   `modification_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `creation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
