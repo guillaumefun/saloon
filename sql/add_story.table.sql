@@ -1,0 +1,1 @@
+ALTER TABLE `bets` ADD `story` VARCHAR(1100) NOT NULL AFTER `accomplished`;

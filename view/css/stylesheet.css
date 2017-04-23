@@ -52,3 +52,14 @@ img.papyGif{
   padding: 2em;
   border-radius: 0.5em;
 }
+
+/* Tout le site */
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: rgb(221, 221, 221);
+    height: 1px;
+} 

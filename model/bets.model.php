@@ -80,12 +80,14 @@ function getDateDelta( $date, $date_format = 'EU' ){ //  EU = sous la forme dd/m
 		if(count($date) != 3) return 'ERROR';
 
 		$time = strtotime($date[0] . "-" . $date[1] . "-" . $date[2]);
+
 	}else if($date_format == 'US'){
 		$date = explode('-', $date);
 
 		if(count($date) != 3) return 'ERROR';
 
 		$time = strtotime($date[2] . "-" . $date[1] . "-" . $date[0]);
+
 	}
 
 	$now = time();
@@ -161,13 +163,14 @@ function createNewBet($name, $description, $deadline, $saloon_id){
 
 }
 
-function setAccomplished( $id, $nb_img ){
+function setAccomplished( $id, $nb_img, $story ){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
-	$req = $db -> prepare('UPDATE bets SET accomplished = :accomplished, nb_img = :nb_img WHERE id = :id');
+	$req = $db -> prepare('UPDATE bets SET accomplished = :accomplished, nb_img = :nb_img, story = :story WHERE id = :id');
 	$req -> execute(array(
 		'accomplished' => date("j/m/Y"),
 		'nb_img' => $nb_img,
+		'story' => $story,
 		'id' => $id
 		));
 

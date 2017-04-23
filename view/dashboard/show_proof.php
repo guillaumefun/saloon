@@ -1,3 +1,5 @@
+<hr>
+<p><?php echo $bet['story']; ?></p>
 <div class="gallery" itemscope>
 
 	<?php

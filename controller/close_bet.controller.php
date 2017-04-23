@@ -9,6 +9,7 @@ require('functions.controller.php');
 require('../model/bets.model.php');
 
 $bet_id = htmlspecialchars($_GET['bet_id']);
+$comment = htmlspecialchars($_POST['comment']);
 $bet = getBet($bet_id);
 
 if($bet['user'] != $_SESSION['id']){ 
@@ -41,7 +42,7 @@ if(!empty($_FILES) && count($_FILES['img']['name']) > 0 && count($_FILES['img'][
 
 	$nb_img = $i;
 
-	setAccomplished($bet_id, $nb_img);
+	setAccomplished($bet_id, $nb_img, $comment);
 	header('Location: ../view/dashboard/');
 }else{
 	header('Location: ../view/dashboard/');
