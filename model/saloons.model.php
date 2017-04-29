@@ -104,3 +104,20 @@ function addMember( $name, $saloon_id ){
 	return 'DONE';
 
 }
+
+function addMemberByID($user_id , $saloon_id){
+
+	$saloon = getSaloon( $saloon_id );
+
+	$m = $saloon['members'] . '|' . $user_id;
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare(' UPDATE saloons SET members = :members WHERE id = :id');
+	$req -> execute( array(	
+		'members' => $m,
+		'id' => $saloon_id
+		) );
+
+}
+
+?>

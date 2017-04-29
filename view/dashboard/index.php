@@ -100,6 +100,7 @@ if(!isset($_SESSION['id'])){
 <script src="../javascript/gallery.js"></script>
 
 <script src="../javascript/comments.js"></script>
+<script src="../javascript/saloon.js"></script>
 
 <script>
 $(document).ready(function(){
