@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <!-- <link href="https://www.golegal.be/backend/view/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
  -->
+<meta name="viewport" content="width=device-width" />
 <link href="/Saloon/view/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/stylesheet.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>

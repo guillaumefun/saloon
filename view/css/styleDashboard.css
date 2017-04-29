@@ -51,6 +51,7 @@ _________________________________________________________*/
   padding-left: 0;
   padding-right: 0;
 }
+
 .mywell h4{
   font-family: 'Permanent Marker', cursive;
   font-family: 'Kalam';
@@ -123,6 +124,37 @@ _________________________________________________________*/
 .lol{
   margin-bottom: 0.2em;
   margin-top: 0.3em;
+}
+
+/*media querries*/
+@media all and (max-width: 767px) {
+  .mywellimg{
+    padding: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  .mywell{
+    padding: 0;
+    padding-bottom: 1em;
+  }
+  .btncouilles{
+    display: block;
+    width: 100%;
+  }
+  .comm{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .nop{padding-right: 15px;}
+  .nop2{padding-left: 15px;}
+  .nop2 button{
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+  }
+  .bd{padding: 0;}
+
+
 }
 
 

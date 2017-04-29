@@ -63,11 +63,11 @@ foreach ($saloon as $bet) {
 				<!--BLOCK de GAUCGE-->
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
-						<div class="col-md-2 mywellimg">
+						<div class="col-sm-2 mywellimg">
 							<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>">
 						</div>
 
-						<div class="col-md-10">
+						<div class="col-sm-10">
 							<h4><?php echo $bet['name'];
 
 							$delta_dead = getDateDelta($bet['deadline']);
@@ -104,7 +104,7 @@ foreach ($saloon as $bet) {
 								if($bet['user'] == $_SESSION['id'] && $delta_dead >= 0 && $bet['accomplished'] == '0'){
 
 									?>
-										<a href="../close_bet.view.php?bet_id=<?php echo $bet['id']; ?>"><button class="btn btn-default">J'ai porté mes couilles !</button></a>
+										<a href="../close_bet.view.php?bet_id=<?php echo $bet['id']; ?>"><button class="btn btn-default btncouilles">J'ai porté mes couilles !</button></a>
 									<?php
 
 								}
@@ -175,7 +175,7 @@ foreach ($saloon as $bet) {
 
 
 				<!--BLOC de DROITE-->
-				<div class="col-md-4">
+				<div class="col-md-4 bd">
 					<div class="mywell2">
 						<div class="row">
 							<?php
@@ -188,13 +188,13 @@ foreach ($saloon as $bet) {
 								?>
 								<div class="col-md-12 rewa">
 									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>" class="rewards"><?php echo $reward_quantity; ?></a>
-									<?php 
+									<?php
 
 									if($bet['accomplished'] == '0'){
 										?>
 									<button class="btn btn-default btn-xs plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
 									<button class="btn btn-default btn-xs minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
-									<?php 
+									<?php
 										}
 
 									?>
@@ -214,7 +214,7 @@ foreach ($saloon as $bet) {
 
 						</div>
 
-						<?php 
+						<?php
 
 						if($bet['accomplished'] == '0'){
 										?>

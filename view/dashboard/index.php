@@ -47,8 +47,8 @@ if(!isset($_SESSION['id'])){
 			<div class="container">
 					<div class="row">
 							<div class="col-lg-12 text-center">
-									<h1 class="tagline">PorteLES.com</h1>
-									<h3 class="tagline">Porte tes boulliches, et tes boulliches te porteront</h3>
+									<h1 class="tagline">Licorne.life</h1>
+									<h3 class="tagline">Ultimate way to become a fucking Licorne!</h3>
 							</div>
 					</div>
 			</div>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['id'])){
 				</div>
 
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
+					<div class="col-sm-8 col-sm-offset-2">
 						<?php include('messages.php'); ?>
 						<?php include('saloon.php'); ?>
 					</div>

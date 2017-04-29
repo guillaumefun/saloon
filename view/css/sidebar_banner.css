@@ -181,3 +181,17 @@ ________________________________________________________________*/
 .links img:hover{
   opacity: 1;
 }
+
+@media all and (max-width: 767px) {
+  .searchBar, .links{display: none;}
+  .btnTog{
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+  .btnTog a{
+    display: block;
+    width: 100%;
+  }
+}

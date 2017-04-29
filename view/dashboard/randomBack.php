@@ -8,7 +8,8 @@ $selectedBack = "$back[$number]";
  <style>
 .fucking-banner{
    height: 220px;
-   background: url('../resources/img/<?php echo $selectedBack . ".jpg"?>') center 88% no-repeat scroll;
+  /* background: url('../resources/img/<?php echo $selectedBack . ".jpg"?>') center 88% no-repeat scroll;*/
+   background: url('../resources/img/bg02.jpg') center 88% no-repeat scroll;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    background-size: cover;
