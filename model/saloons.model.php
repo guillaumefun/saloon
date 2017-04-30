@@ -120,4 +120,20 @@ function addMemberByID($user_id , $saloon_id){
 
 }
 
+function isMember($user_id, $saloon_id){
+
+	$saloon = getSaloon( $saloon_id );
+
+	$members = explode('|', $saloon['members']);
+
+	foreach($members as $member){
+		if($member == $user_id){
+			return true;
+		}
+	}
+
+	return false;
+
+}
+
 ?>

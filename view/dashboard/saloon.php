@@ -62,6 +62,15 @@
 	</div>
 </div>
 
+<div id="link_copied" style="display: none">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 alert alert-info">
+			<p>Lien copié dans le presse-papiers.</p>
+		</div>
+	</div>
+</div>
+
 
 
 

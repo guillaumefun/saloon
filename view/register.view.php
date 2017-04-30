@@ -16,7 +16,7 @@ if(isset($_SESSION['id'])){
 <body>
 	<div class="container-fluid">
 
-		<form action="../controller/register.controller.php" method="post">
+		<form action="../controller/register.controller.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>" method="post">
 
 			<div class="row form-group top">
 

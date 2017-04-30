@@ -12,13 +12,20 @@ if( isset($email) && isset($password) ){
 
 	// Si les identifiants ne correspondent pas
 	if( !login( $email, $password )){
-
-		header('Location: ../view/?msg=error1');
+		if(isset($_GET['key']) && isset($_GET['s'])){ 
+			header('Location: ../view/?msg=error1&key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s'])); 
+		}else{
+			header('Location: ../view/?msg=error1');
+		}
 		exit;
 
 	}else{
 
-		header('Location: ../view/dashboard/');
+		if(isset($_GET['key']) && isset($_GET['s'])){ 
+			header('Location: ../s/?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s'])); 
+		}else{
+			header('Location: ../view/dashboard/');
+		}
 		exit;
 
 	}

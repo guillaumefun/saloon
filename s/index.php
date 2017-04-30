@@ -13,13 +13,17 @@ if(isset($_SESSION['id']) && isset($_GET['key']) && isset($_GET['s'])){
 	$saloon = getSaloon( $saloon_id );
 	$expected_key = substr(sha1(md5($saloon_id . "%" . $saloon['creation_date'])), 1, 16);
 
-	if($expected_key == $key){
+	if($expected_key == $key && !isMember($_SESSION['id'] , $saloon_id)){
 
 		addMemberByID($_SESSION['id'] ,$saloon_id);
 		header('Location: ../view/dashboard/?s=' . $saloon_id);
 
+	}else{
+		header('Location: ../view/dashboard/?s=' . $saloon_id);
 	}
 
+}else if(isset($_GET['key']) && isset($_GET['s'])){
+	header('Location: ../view/?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']));
 }
 
 ?>

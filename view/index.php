@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 if(isset($_SESSION['id'])){
 	header('Location: dashboard/');
@@ -17,7 +19,7 @@ if(isset($_SESSION['id'])){
 
 	<div class="container-fluid">
 
-		<form action="../controller/login.controller.php" method="post">
+		<form action="../controller/login.controller.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>" method="post">
 
 			<div class="row gif">
 				<div class="col-md-4 col-md-offset-4">
@@ -68,7 +70,7 @@ if(isset($_SESSION['id'])){
 
 			<div class="col-md-2 col-md-offset-5">
 
-				<a href="register.view.php"><button class="btn btn-default">Pas encore inscris ?</button></a>
+				<a href="register.view.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>"><button class="btn btn-default">Pas encore inscris ?</button></a>
 
 			</div>
 
