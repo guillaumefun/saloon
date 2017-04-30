@@ -15,6 +15,27 @@ function ReHelpBox(id){
   }) ;
 }
 
+/* mini popup sans rideau */
+
+function MiniHelpBoxHandle(id){
+  if(document.getElementById(id).style.display!='block'){
+    document.getElementById(id).style.display = 'block';
+  }else{
+    $("#" + id).fadeOut(200);
+    document.getElementById(id).style.display = 'none';
+  }
+}
+
+function MiniHelpBox(html_id){
+
+  var id = html_id;
+  MiniHelpBoxHandle(id);
+  setTimeout(function(){ MiniHelpBoxHandle(id); }, 3500);
+  
+
+}
+
+
 
 /*MENU TOGGLE SCRIPT*/
 $("#menu-toggle").click(function(e) {

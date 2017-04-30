@@ -1,4 +1,6 @@
-<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon; ?>
+<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon; 
+	$saloon_info = getSaloon( $saloon_id );
+?>
 
 <div id="creerProjet" style="display: none">
 	<div id="creerProjetB">
@@ -12,7 +14,7 @@
 			<div class="row form-group">
 				<div class="col-md-10">
 					<label>Description</label>
-					<input type="text" class="form-control" placeholder="La description de mon Projet de fou !" name="description">
+					<textarea class="form-control" placeholder="La description de mon Projet de fou !" name="description"></textarea>
 				</div>
 			</div>
 			<div class="row form-group">
@@ -34,7 +36,7 @@
 	<div id="ajoutMembreB">
 		<form action="../../controller/add_member.controller.php?s=<?php  echo $saloon_id; ?>" method="post">
 			<div class="row form-group">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<label>Ajouter des nouveaux membres</label>
 					<h6>Séparez leur nom d'utilisateur par une virgule</h6>
 					<input type="text" class="form-control" placeholder="dupont365,maxlamenace" name="logins">
@@ -45,7 +47,27 @@
 					<input type="submit" class="btn btn-primary" value="Ajouter des nouveaux membres">
 				</div>
 			</div>
+			
 		</form>
+
+		<div class="row form-group">
+			<div class="col-md-10">
+				<label>Envoie ce lien à tes potes pour qu'ils aient accès à ce salon !</label>
+				<div class="input-group">
+					<input type="text" id="saloon_link" class="form-control" value="<?php echo "http://www.licorne.life/s/?key=" . substr(sha1(md5($saloon_id . "%" . $saloon_info['creation_date'])), 1, 16) . "&s=" . $saloon_id; ?>" ><div class="input-group-btn"><button type="button" id="saloon_link_btn" class="btn btn-primary">Copier le lien</button></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div id="link_copied" style="display: none">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 alert alert-info">
+			<p>Lien copié dans le presse-papiers.</p>
+		</div>
 	</div>
 </div>
 
@@ -88,6 +110,7 @@ foreach ($saloon as $bet) {
 									<span class="label label-success">Fait <3</span>
 								<?php
 							}
+
 
 							if($delta_dead < 0 && $bet['accomplished'] == '0'){
 								?>
