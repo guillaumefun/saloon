@@ -33,9 +33,12 @@ if(!isset($_SESSION['id'])){
 				<?php include('all_saloons.php'); ?>
 			</ul>
 			<div class="logBtn">
+				<?php
+				if( isset($default_saloon)){ ?>
 				<a onclick="HelpBox('creerProjet')" class="">Crée toi un projet!</a>
 				<a onclick="HelpBox('ajoutMembre')" class="">Ajoute des membres<3</a>
-				<a href="/Saloon/controller/logout.controller.php" class="">Déconnexion</a>
+				<?php } ?>
+				<a href="/controller/logout.controller.php" class="">Déconnexion</a>
 			</div>
 		</div><!--end sidebar-wrapper-->
 
@@ -80,7 +83,13 @@ if(!isset($_SESSION['id'])){
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<?php include('messages.php'); ?>
-						<?php include('saloon.php'); ?>
+						<?php 
+						if( isset($default_saloon)){
+							include('saloon.php');
+						}else{
+							include('no_saloon.php');
+						}
+							 ?>
 					</div>
 				</div>
 

@@ -9,7 +9,7 @@
 // Fonction qui connecte un utilisateur
 function login( $login, $password){
 
-	$password = sha1($password);
+	$password = hash('sha256', 'Du4' . $password);
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
 	$req = $db -> prepare('SELECT * FROM users WHERE login = :login AND password = :password');
 	$req -> execute(array(
@@ -62,7 +62,7 @@ function getUserByLogin( $login ){
 
 function createNewUser( $login, $email, $password ){
 
-	$password = sha1($password);
+	$password = hash('sha256', 'Du4' . $password);
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
 	$req = $db -> prepare(' INSERT INTO users( login, email, password, creation_date, modification_date) VALUES (:login, :email, :password, NOW(), NOW()) ');
 	$req -> execute( array(

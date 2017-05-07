@@ -6,9 +6,9 @@
 	<div id="creerProjetB">
 		<form action="../../controller/bet.controller.php?id=<?php  echo $saloon_id; ?>" method="post">
 			<div class="row form-group">
-				<div class="col-md-4">
+				<div class="col-md-10">
 					<label>Nom</label>
-					<input type="text" class="form-control" placeholder="Mon Projet de fou !" name="name">
+					<input type="text" class="form-control" placeholder="Mon Projet de fou !" name="name" id="project_name">
 				</div>
 			</div>
 			<div class="row form-group">
@@ -71,13 +71,41 @@
 	</div>
 </div>
 
+<h2 class="text-center"><?php $saloon_info = getSaloon($saloon_id);
+	echo strtoupper($saloon_info['name']);
+	$saloon_members = explode('|', $saloon_info['members']);
+ ?></h2>
+ <a href="#" data-toggle="tooltip" title="<?php echo printSaloonMembers( $saloon_info['members'] ); ?>"><p class="text-center"><?php echo count($saloon_members); if( count($saloon_members) > 1 ){ echo " membres"; }else{ echo " membre"; } ?></p></a>
 
+<div class="row noMarg">
+	<div class="col-md-8">
+		<input class="form-control" placeholder="Balance ton projet !" onfocus="startProject();">
+	</div>
+</div>
+</br>
 
 
 <?php
+
 $saloon = getBetsFeed( $saloon_id );
+if(count($saloon) == 0){
+	?>
+		<div class="row">
+
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="text-center">Bienvenue !</h3>
+				<h5 class="text-center">Personne n'a fait de projet encore...</h5>
+				<p class="text-center"><a onclick="HelpBox('creerProjet')"><button class="btn btn-default">Crée toi un projet!</button></a></p>
+			</div>
+
+		</div>
+
+		<?php
+}
 foreach ($saloon as $bet) {
 	$count = 0;
+
+	$author = getUser($bet['user']);
 		?>
 
 		<div class="projo">
@@ -87,6 +115,7 @@ foreach ($saloon as $bet) {
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-sm-2 mywellimg">
 							<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>">
+							<h5 class="text-center"><?php echo $author['login']; ?></h5>
 						</div>
 
 						<div class="col-sm-10">
@@ -260,17 +289,6 @@ foreach ($saloon as $bet) {
 		<?php
 		$count++;
 	}
-	if($count == 0){
-		?>
-		<div class="row">
 
-			<div class="col-md-5">
-				<p>Personne n'a fait de projet encore !</p>
-			</div>
-
-		</div>
-
-		<?php
-	}
 
 ?>

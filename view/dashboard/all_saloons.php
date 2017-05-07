@@ -10,18 +10,20 @@
 	$saloons = getAllSaloons();
 	$count = 0;
 
-	foreach( $saloons as $saloon ){
-		if($count == 0){
-			$default_saloon = $saloon['id'];
-			$count++;
+	if(count($saloons) > 0){
+		foreach( $saloons as $saloon ){
+			if($count == 0){
+				$default_saloon = $saloon['id'];
+				$count++;
+			}
+
+			?>
+			<li>
+				<a href="?s=<?php echo $saloon['id']; ?>"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?></p></a>
+			</li>
+			<?php
+
 		}
-
-		?>
-		<li>
-			<a href="?s=<?php echo $saloon['id']; ?>"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?></p></a>
-		</li>
-		<?php
-
 	}
 
 	?>

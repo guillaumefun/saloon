@@ -58,7 +58,7 @@ if(isset($_SESSION['id'])){
 												</div>
 												</div>
 												<div class="form-bottom">
-											<form action="../controller/login.controller.php" method="post" class="login-form">
+											<form action="../controller/login.controller.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>" method="post" class="login-form">
 												<div class="form-group">
 													<label class="sr-only" for="form-username">Username</label>
 														<input type="text" name="login" class="form-control" placeholder="Login" >
@@ -74,7 +74,7 @@ if(isset($_SESSION['id'])){
 									</div>
 
 								<div class="social-login">
-											<a href="register.view.php"><h3>Pas encore inscrit?</h3></a>
+											<a href="register.view.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>"><h3>Pas encore inscrit?</h3></a>
 											<!--<div class="social-login-buttons">
 												<a class="btn btn-link-1 btn-link-1-facebook" href="#">
 													<i class="fa fa-facebook"></i> Facebook

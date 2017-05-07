@@ -29,6 +29,28 @@ function printRewardDetail( $reward_detail ){
 
 }
 
+function printSaloonMembers( $members ){
+
+	$print = '';
+
+	$members = explode('|', $members);
+
+	foreach ( $members as $member ) {
+
+		$user = getUser($member);
+		
+		if($print == ''){
+			$print = $user['login'];
+		}else{
+			$print = $print . "<br />" . $user['login'];
+		}
+
+	}
+
+	return $print;
+
+}
+
 // Fonction qui redimensionne une image
 function resize($img, $height, $i){
 

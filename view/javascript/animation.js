@@ -35,6 +35,12 @@ function MiniHelpBox(html_id){
 
 }
 
+function startProject(){
+
+  HelpBox('creerProjet');
+  $('#project_name').focus();
+
+}
 
 
 /*MENU TOGGLE SCRIPT*/
