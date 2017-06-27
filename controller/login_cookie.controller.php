@@ -22,8 +22,8 @@ if( isset($email) && isset($password) ){
 	}else{
 		
 		// MàJ de la date d'expiration
-		setcookie("login", $email, time() + $valide *24*3600, null, null, false, true);
-		setcookie("pass", $password, time() + $valide *24*3600, null, null, false, true);
+		setcookie("login", $email, time() + $valide *24*3600, '/', '.licorne.life', false, true);
+		setcookie("pass", $password, time() + $valide *24*3600, '/', '.licorne.life', false, true);
 
 
 		if(isset($_GET['key']) && isset($_GET['s'])){ 

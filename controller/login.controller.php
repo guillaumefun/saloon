@@ -24,8 +24,8 @@ if( isset($email) && isset($password) ){
 		if($rememberme = 'on'){
 				$valide = 20; // nombre de jour de validité du cookie
 		
-				setcookie("login", $email, time() + $valide *24*3600);
-				setcookie("pass", $password, time() + $valide *24*3600);
+				setcookie("login", $email, time() + $valide *24*3600, '/', '.licorne.life');
+				setcookie("pass", $password, time() + $valide *24*3600,  '/', '.licorne.life');
 		}
 
 		if(isset($_GET['key']) && isset($_GET['s'])){ 
