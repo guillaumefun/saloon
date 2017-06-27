@@ -8,6 +8,10 @@ if(isset($_SESSION['id'])){
 	header('Location: dashboard/');
 }
 
+if(isset($_COOKIE['login'])){
+	header('Location: ../controller/login_cookie.controller.php');
+}
+
 ?>
 <!DOCTYPE html>
 
@@ -66,6 +70,11 @@ if(isset($_SESSION['id'])){
 													<div class="form-group">
 														<label class="sr-only" for="form-password">Password</label>
 														<input type="password" name="password" class="form-control" placeholder="Mot de passe" >
+													</div>
+													<div class="form-group">
+														<div class="checkbox">
+															<label><input type="checkbox" name="rememberme" >Se souvenir de moi</label>
+														</div>
 													</div>
 													<button type="submit" class="btn">Sign in!</button>
 

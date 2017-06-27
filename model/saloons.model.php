@@ -40,6 +40,34 @@ function getAllSaloons(){
 
 }
 
+// renvoie true si l'utilisateur connecté est autorisé à voir le profil de l'utilisateur dont on donne l'id en argument
+function allowedProfile( $id ){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM saloons');
+	$req -> execute();
+
+	$results = $req -> fetchAll();
+
+	foreach ($results as $result) {
+		$members = explode('|', $result['members']);
+		$is_member = false;
+		$is_member2 = false;
+		foreach ($members as $member ) {
+			if($member == $_SESSION['id']){ 
+				$is_member = true;
+			}else if($member == $id){
+				$is_member2 = true;
+			}
+		}
+		if($is_member && $is_member2) return true;
+		
+	}
+
+	return false;
+
+}
+
 function getSaloon( $id ){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
@@ -52,6 +80,7 @@ function getSaloon( $id ){
 	return $results;
 
 }
+
 
 function createNewSaloon( $name, $members){
 

@@ -13,3 +13,10 @@
 			HelpBox(id);
 		}) ;
 	}
+
+function startProject(){
+
+	HelpBox('creerProjet');
+	$('#project_name').focus();
+
+}
