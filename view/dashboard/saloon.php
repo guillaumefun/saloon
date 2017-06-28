@@ -114,7 +114,7 @@ foreach ($saloon as $bet) {
 				<div class="col-md-8 ombreG">
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-sm-2 mywellimg">
-							<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>">
+							<a href="../profile/?id=<?php echo $author['id'] . "&s=" . $saloon_id; ?>" ><img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>"></a>
 							<h5 class="text-center"><?php echo $author['login']; ?></h5>
 						</div>
 

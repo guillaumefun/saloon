@@ -14,6 +14,7 @@ if(!isset($_SESSION['id'])){
 	<title>Saloon</title>
 	<?php include('../header/head.header.php'); ?>
 	<?php include('randomBack.php'); ?>
+	<link rel="stylesheet" type="text/css" href="../css/chatbox.css">
 </head>
 
 <body class="theSaloon">
@@ -38,7 +39,7 @@ if(!isset($_SESSION['id'])){
 				<a onclick="HelpBox('creerProjet')" class="">Crée toi un projet!</a>
 				<a onclick="HelpBox('ajoutMembre')" class="">Ajoute des membres<3</a>
 				<?php } ?>
-				<a href="/controller/logout.controller.php" class="">Déconnexion</a>
+				<a href="/Saloon/controller/logout.controller.php" class="">Déconnexion</a>
 			</div>
 		</div><!--end sidebar-wrapper-->
 
@@ -92,6 +93,9 @@ if(!isset($_SESSION['id'])){
 							 ?>
 					</div>
 				</div>
+
+				<!-- Chatbox -->
+				<?php include('chatbox.php'); ?>
 
 			</div>
 		</div><!--end page content-->
