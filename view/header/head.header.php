@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 <link href="/Saloon/view/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/stylesheet.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="/Saloon/view/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/structure.css">
 <link rel="stylesheet" type="text/css" href="/Saloon/view/css/sidebar_banner.css">

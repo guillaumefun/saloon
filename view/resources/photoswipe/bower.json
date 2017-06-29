@@ -1,8 +1,8 @@
 {
   "name": "photoswipe",
-  "homepage": "http://photoswipe.com",
+  "homepage": "https://photoswipe.com",
   "authors": [
-    "Dmitry Semenov <diiiimaaaa@gmail.com> (http://dimsemenov.com)"
+    "Dmitry Semenov <diiiimaaaa@gmail.com> (https://dimsemenov.com)"
   ],
   "description": "Touch-friendly image gallery for mobile and desktop. Without dependencies.",
   "main": [

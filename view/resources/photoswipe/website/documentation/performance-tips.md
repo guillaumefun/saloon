@@ -10,7 +10,7 @@ description: Suggestions on how to make gallery faster.
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentations/performance-tips.html
+canonical_url: https://photoswipe.com/documentations/performance-tips.html
 
 buildtool: true
 
@@ -25,9 +25,9 @@ markdownpage: true
 - Try to avoid complex `:hover` and `:active` effects on thumbnails that open PhotoSwipe if you have zoom-in/out animation enabled (apply the first rule). 
 - Make sure that you don't have complex styles on UI over PhotoSwipe sliding area. For example, `text-shadow` on caption text can cause issues.
 
-If you followed above steps and performance of your gallery differs from [PhotoSwipe home page](http://photoswipe.com), start isolating PhotoSwipe on page by excluding all JS/CSS/HTML code not related to it. Make sure that you don't have any kind of banner rotators that continuously run some animation behind the PhotoSwipe. 
+If you followed above steps and performance of your gallery differs from [PhotoSwipe home page](https://photoswipe.com), start isolating PhotoSwipe on page by excluding all JS/CSS/HTML code not related to it. Make sure that you don't have any kind of banner rotators that continuously run some animation behind the PhotoSwipe. 
 
-If it doesn't work fast even after you isolated PhotoSwipe &ndash; open an [issue on GitHub](https://github.com/dimsemenov/PhotoSwipe/issues) and provide a link to [reduced test case](http://css-tricks.com/reduced-test-cases/).
+If it doesn't work fast even after you isolated PhotoSwipe &ndash; open an [issue on GitHub](https://github.com/dimsemenov/PhotoSwipe/issues) and provide a link to [reduced test case](https://css-tricks.com/reduced-test-cases/).
 
 ## Including Files
 
@@ -37,4 +37,4 @@ If it doesn't work fast even after you isolated PhotoSwipe &ndash; open an [issu
 
 Know how this page can be improved? [Suggest an edit!](https://github.com/dimsemenov/PhotoSwipe/blob/master/website/documentation/responsive-images.md)
 
-<iframe src="http://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>

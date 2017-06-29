@@ -54,7 +54,7 @@
 			<div class="col-md-10">
 				<label>Envoie ce lien à tes potes pour qu'ils aient accès à ce salon !</label>
 				<div class="input-group">
-					<input type="text" id="saloon_link" class="form-control" value="<?php echo "http://www.licorne.life/s/?key=" . substr(sha1(md5($saloon_id . "%" . $saloon_info['creation_date'])), 1, 16) . "&s=" . $saloon_id; ?>" ><div class="input-group-btn"><button type="button" id="saloon_link_btn" class="btn btn-primary">Copier le lien</button></div>
+					<input type="text" id="saloon_link" class="form-control" value="<?php echo "https://www.licorne.life/s/?key=" . substr(sha1(md5($saloon_id . "%" . $saloon_info['creation_date'])), 1, 16) . "&s=" . $saloon_id; ?>" ><div class="input-group-btn"><button type="button" id="saloon_link_btn" class="btn btn-primary">Copier le lien</button></div>
 				</div>
 			</div>
 		</div>

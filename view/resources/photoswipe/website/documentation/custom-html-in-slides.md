@@ -10,7 +10,7 @@ description: How to add custom HTML in PhotoSwipe slides, like ads or list of re
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/custom-html-in-slides.html
+canonical_url: https://photoswipe.com/documentation/custom-html-in-slides.html
 
 buildtool: true
 
@@ -25,7 +25,7 @@ To make PhotoSwipe display HTML content in slides you need to define `html` prop
 var items = [
 	// slide 1 with HTML
 	{
-		html: '<div><h1>Any HTML <a href="http://example.com">content</a></h1></div>'
+		html: '<div><h1>Any HTML <a href="https://example.com">content</a></h1></div>'
 	},
 
 	// slide 2 with image
@@ -68,7 +68,7 @@ Example:
 
 <div class="codepen-embed">
 	<p data-height="600" data-theme-id="10447" data-slug-hash="MYexrm" data-default-tab="result" data-user="dimsemenov" class='codepen'>
-		<a href="http://codepen.io/dimsemenov/pen/MYexrm/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
+		<a href="https://codepen.io/dimsemenov/pen/MYexrm/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
 	</p>
 </div>
 

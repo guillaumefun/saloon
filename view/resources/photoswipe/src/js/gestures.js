@@ -297,7 +297,7 @@ var _gestureStartTime,
 		// Allow dragging only via left mouse button.
 		// As this handler is not added in IE8 - we ignore e.which
 		// 
-		// http://www.quirksmode.org/js/events_properties.html
+		// https://www.quirksmode.org/js/events_properties.html
 		// https://developer.mozilla.org/en-US/docs/Web/API/event.button
 		if(e.type === 'mousedown' && e.button > 0  ) {
 			return;

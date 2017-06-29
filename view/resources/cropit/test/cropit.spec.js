@@ -9,7 +9,7 @@ import { ERRORS } from '../src/constants';
 import options from '../src/options';
 import Cropit from '../src/cropit';
 
-const IMAGE_URL = 'http://example.com/image.jpg';
+const IMAGE_URL = 'https://example.com/image.jpg';
 const IMAGE_DATA = 'data:image/png;base64,image-data...';
 
 const newCropit = (options) => {

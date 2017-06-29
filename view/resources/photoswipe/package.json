@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/dimsemenov/Photoswipe/issues"
   },
-  "homepage": "http://photoswipe.com",
+  "homepage": "https://photoswipe.com",
   "main": "dist/photoswipe.js",
   "keywords": [
     "gallery",
@@ -41,6 +41,6 @@
     "swipe",
     "zoom"
   ],
-  "author": "Dmitry Semenov (http://dimsemenov.com)",
+  "author": "Dmitry Semenov (https://dimsemenov.com)",
   "license": "MIT"
 }
