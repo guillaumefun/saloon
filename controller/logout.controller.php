@@ -6,8 +6,11 @@
 		session_destroy();
 
 		if(isset($_COOKIE['login'])){
-			setcookie("login", $email, time(), null, null, false, true);
-			setcookie("pass", $password, time(), null, null, false, true);
+			$valide = 0;
+			setcookie("login", $email, time() + $valide *24*3600, '/', 'www.licorne.life');
+			setcookie("pass", $password, time() + $valide *24*3600,  '/', 'www.licorne.life');
+			setcookie("login", $email, time() + $valide *24*3600, '/', 'licorne.life');
+			setcookie("pass", $password, time() + $valide *24*3600,  '/', 'licorne.life');
 		}
 
 		header('Location: ../view/?msg=loggedout');

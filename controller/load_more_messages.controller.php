@@ -7,19 +7,24 @@ session_start();
 require('../model/messages.model.php');
 
 $convers_id = htmlspecialchars($_POST['convers_id']);
+$nb_msg_init = htmlspecialchars($_POST['nb_msg']);
 
 if(!empty($convers_id)){
+	$nb_msg_total = countMessages($convers_id);
+	if($nb_msg_init < $nb_msg_total){
 
-	$nb_msg_total = countMessages( $convers_id );
+		$messages = getMessageByConversID($convers_id, $nb_msg_init + 20); // prend 20 msg en plus que ce qui est affiché
+		$nb_msg = count($messages); // nombre de msg qui seront affiché
+		$messages = array_slice($messages, $nb_msg_init); // prend uniquement les messages qui ne sont pas encore affichés
 
-	if( $_SESSION['nb_msg'][$convers_id] != $nb_msg_total ){ // s'il y a du neuf dans la bdd
-
-		$nb_msg_previous = $_SESSION['nb_msg'][$convers_id];
-		$_SESSION['nb_msg'][$convers_id] = $nb_msg_total;
-		$messages = getMessageByConversID($convers_id, 10);
 		$messages = array_reverse($messages);
-		$messages = array_slice($messages, $nb_msg_previous);
-		$nb_msg = count($messages); // nombre de msg affiché
+	
+		?>
+
+			<div class="more_msg" id="<?php echo $nb_msg; ?>" hidden>
+			</div>
+
+		<?php
 		
 
 		foreach ($messages as $msg){
@@ -33,17 +38,6 @@ if(!empty($convers_id)){
 			<?php
 		}
 
-		if( count($messages) == 0 ){
-			?>
-
-				<p style="font-size:0.8em;margin">Envoie un premier message !</p>
-
-			<?php
-		}
-
-		echo "<|aaa|>" . ($nb_msg_total - $nb_msg_previous);
-	}else{ // s'il n'y a pas de nouveau msg
-		echo "-1";
 	}
 
 }

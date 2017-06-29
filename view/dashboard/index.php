@@ -39,7 +39,7 @@ if(!isset($_SESSION['id'])){
 				<a onclick="HelpBox('creerProjet')" class="">Crée toi un projet!</a>
 				<a onclick="HelpBox('ajoutMembre')" class="">Ajoute des membres<3</a>
 				<?php } ?>
-				<a href="/Saloon/controller/logout.controller.php" class="">Déconnexion</a>
+				<a href="/controller/logout.controller.php" class="">Déconnexion</a>
 			</div>
 		</div><!--end sidebar-wrapper-->
 

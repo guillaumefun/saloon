@@ -13,6 +13,8 @@ if(!empty($content) && !empty($convers_id)){
 
 	$messages = getMessageByConversID($convers_id, 10);
 
+	$_SESSION['last_msg'][$convers_id] = $messages[0]['id'];
+
 	$messages = array_reverse($messages);
 
 	foreach ($messages as $msg){

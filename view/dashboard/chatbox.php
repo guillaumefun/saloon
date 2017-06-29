@@ -14,7 +14,19 @@
 				require('../../model/messages.model.php');
 
 				$messages_arr = getMessageByConversID($saloon_id, 10);
+				$_SESSION['nb_msg'][$saloon_id] = countMessages( $saloon_id );
 				$messages_arr = array_reverse($messages_arr);
+				$nb_msg = count($messages_arr); // nombre de msg affiché
+				$nb_msg_total = countMessages($saloon_id);
+
+				?>
+
+					<div class="more_msg" id="<?php echo $nb_msg; ?>" hidden>
+					</div>
+
+				<?php
+				
+
 
 				foreach ($messages_arr as $msg){
 					?>
@@ -39,6 +51,7 @@
 		</div>
 		<div class="chatbox-form">
 			<textarea class="msg_input" id="<?php echo $saloon_id; ?>"></textarea>
+			<div class="send-btn"><img src="../resources/img/send.png"></div>
 		</div>
 	</div>
 

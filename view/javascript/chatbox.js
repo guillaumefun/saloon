@@ -1,17 +1,56 @@
+//fonction qui fait clignoter la barre de discussion quand il y a des nouveaux messages
+function barFlash(){
+
+    intID = setInterval(function(){
+
+        if($('.chatbar').css('background-color') == "rgb(215, 229, 238)"){
+            $('.chatbar').css('background-color' , "rgb(228, 236, 241)");
+        }else{
+            $('.chatbar').css('background-color' , "rgb(215, 229, 238)");
+        }
+
+    }, 1000);
+
+}
+
+
+// ferme le popup de discussion quand on clique sur le header de la fenetre
 $(".chatbox-header").click(function(){
 
     $(".chatbox").attr("hidden", true);
     $(".chatbar").attr("hidden", false);
 
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        $(document.body).removeClass('noscroll');
+
+    }
+
 });
 
+// ouvre le popup de discussion quand on clique sur la barre de discussion
 $(".chatbar").click(function(){
 
-    $(".chatbox").attr("hidden", false);
-    $(".chatbar").attr("hidden", true);
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        $(document.body).addClass('noscroll');
+
+    }
+
+        $(".chatbox").attr("hidden", false);
+        $(".chatbar").attr("hidden", true);
+
+        if(typeof intID !== 'undefined'){
+            clearInterval(intID); // arrête de faire clignoter la chatbar quand on clique dessus
+            $('.chatbar').css('background-color' , "rgb(215, 229, 238)"); // remet à sa couleur normale
+        }
+
+        var objDiv = $('.chatbox-logs')[0];
+        objDiv.scrollTop = objDiv.scrollHeight; // Pour que la partie qui s'affiche dans le popup soit les derniers messages ( sinon ça commence au dessus de la discussion et il faut scroller en bas )
 
 })
 
+// fonction qui charge les messages via ajax quand il y en a des nouveaux
 function loadMessages(){
     setInterval(function(){
 
@@ -20,20 +59,66 @@ function loadMessages(){
             $.ajax({type: "POST",
                         url: "../../controller/get_messages.controller.php",
                         data: { 'convers_id': convers_id },
-                        success: function(text){                    
-                            $('.chatbox-logs').html(text);
+                        success: function(text){      
+
+                            if(text != "-1"){  
+                                text = text.split("<|aaa|>"); // un truc que personne risque de mettre dans une conversation
+
+                                $('.chatbox-logs').append(text[0]);
+                                $('.more_msg').attr('id', text[1]);
+                                var sound = new Audio("../resources/sound/chat-sound.mp3");
+                                sound.play();
+                                if(!$(".chatbar").is( ":hidden" )){ // si la fenêtre de convers est fermée ( chatbar affichée du coup )
+                                    barFlash(); // fait clignoter la bar de conversation
+                                }
+                            }
                         },
               });
 
 
        
 
-    }, 3000); // Charge toutes les 3 secondes
+    }, 500); // Charge toutes les demi secondes
+
+}
+
+function loadMoreMessages(){
+
+    var convers_id = $('.msg_input').attr('id');
+    var nb_msg = $('.more_msg').attr('id');
+
+    if(typeof nb_msg !== 'undefined'){
+
+        $.ajax({type: "POST",
+                    url: "../../controller/load_more_messages.controller.php",
+                    data: { 'convers_id': convers_id, 'nb_msg': nb_msg },
+                    success: function(text){      
+
+                            var objDiv = $('.chatbox-logs')[0];
+                            height = $('.chatbox-logs').height();
+                            $('.more_msg').remove();
+                            $('.chatbox-logs').prepend(text); // ajoute avant tous les autres 
+                            if(text != ''){
+                                objDiv.scrollTop = height;
+                            }
+                        
+                    },
+          });
+
+    }
 
 }
 
 loadMessages();
 
+$('.chatbox-logs').scroll(function(){
+    if($('.chatbox-logs')[0].scrollTop == 0){
+        
+        loadMoreMessages();
+    }
+});
+
+// Fonction qui save un message dans la bdd via ajax
 function saveMessage(e){
 
     var content = e.val();
@@ -50,7 +135,7 @@ function saveMessage(e){
 
 }
 
-
+// lance la sauvegarde du message quand on appuie sur enter
 $('.msg_input').keydown(function(e){ 
     var code = e.which; // recommended to use e.which, it's normalized across browsers
 
@@ -60,115 +145,7 @@ $('.msg_input').keydown(function(e){
     }
 });
 
-
-//  //this function can remove a array element.
-// Array.remove = function(array, from, to) {
-//     var rest = array.slice((to || from) + 1 || array.length);
-//     array.length = from < 0 ? array.length + from : from;
-//     return array.push.apply(array, rest);
-// };
-
-// //this variable represents the total number of popups can be displayed according to the viewport width
-// var total_popups = 0;
-
-// //arrays of popups ids
-// var popups = [];
-
-// //this is used to close a popup
-// function close_popup(id)
-// {
-//     for(var iii = 0; iii < popups.length; iii++)
-//     {
-//         if(id == popups[iii])
-//         {
-//             Array.remove(popups, iii);
-            
-//             document.getElementById(id).style.display = "none";
-            
-//             calculate_popups();
-            
-//             return;
-//         }
-//     }   
-// }
-
-// //displays the popups. Displays based on the maximum number of popups that can be displayed on the current viewport width
-// function display_popups()
-// {
-//     var right = 220;
-    
-//     var iii = 0;
-//     for(iii; iii < total_popups; iii++)
-//     {
-//         if(popups[iii] != undefined)
-//         {
-//             var element = document.getElementById(popups[iii]);
-//             element.style.right = right + "px";
-//             right = right + 320;
-//             element.style.display = "block";
-//         }
-//     }
-    
-//     for(var jjj = iii; jjj < popups.length; jjj++)
-//     {
-//         var element = document.getElementById(popups[jjj]);
-//         element.style.display = "none";
-//     }
-// }
-
-// //creates markup for a new popup. Adds the id to popups array.
-// function register_popup(id, name)
-// {
-    
-//     for(var iii = 0; iii < popups.length; iii++)
-//     {   
-//         //already registered. Bring it to front.
-//         if(id == popups[iii])
-//         {
-//             Array.remove(popups, iii);
-        
-//             popups.unshift(id);
-            
-//             calculate_popups();
-            
-            
-//             return;
-//         }
-//     }               
-    
-//     var element = '<div class="popup-box chat-popup" id="'+ id +'">';
-//     element = element + '<div class="popup-head">';
-//     element = element + '<div class="popup-head-left">'+ name +'</div>';
-//     element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\''+ id +'\');">&#10005;</a></div>';
-//     element = element + '<div style="clear: both"></div></div><div class="popup-messages"><div class="popup-textarea"><textarea></textarea></div></div></div>';
-    
-//     document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;  
-
-//     popups.unshift(id);
-            
-//     calculate_popups();
-    
-// }
-
-// //calculate the total number of popups suitable and then populate the toatal_popups variable.
-// function calculate_popups()
-// {
-//     var width = window.innerWidth;
-//     if(width < 540)
-//     {
-//         total_popups = 0;
-//     }
-//     else
-//     {
-//         width = width - 200;
-//         //320 is width of a single popup box
-//         total_popups = parseInt(width/320);
-//     }
-    
-//     display_popups();
-    
-// }
-
-// //recalculate when window is loaded and also when window is resized.
-// window.addEventListener("resize", calculate_popups);
-// window.addEventListener("load", calculate_popups);
+// lance la sauvegarde du message quand on appuie sur le bouton envoyer
+$('.send-btn').click(function(e){ 
+    saveMessage($('.msg_input'));
+});
