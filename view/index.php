@@ -18,8 +18,8 @@ if(isset($_COOKIE['login'])){
 <html>
 <head>
 	<?php include('header/head.header.php'); ?>
-	<link rel="stylesheet" href="/Saloon/view/css/form-elements.css">
-	<link rel="stylesheet" href="/Saloon/view/css/style.css">
+	<link rel="stylesheet" href="/view/css/form-elements.css">
+	<link rel="stylesheet" href="/view/css/style.css">
 </head>
 
 <body class="bg">
