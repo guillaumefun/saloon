@@ -8,6 +8,7 @@ if(isset($_SESSION['id'])){
 	header('Location: dashboard/');
 }
 
+
 if(isset($_COOKIE['login'])){
 	header('Location: ../controller/login_cookie.controller.php');
 }
@@ -18,8 +19,8 @@ if(isset($_COOKIE['login'])){
 <html>
 <head>
 	<?php include('header/head.header.php'); ?>
-	<link rel="stylesheet" href="/Saloon/view/css/form-elements.css">
-	<link rel="stylesheet" href="/Saloon/view/css/style.css">
+	<link rel="stylesheet" href="css/form-elements.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg">
@@ -65,7 +66,7 @@ if(isset($_COOKIE['login'])){
 											<form action="../controller/login.controller.php<?php if(isset($_GET['key']) && isset($_GET['s'])){ echo '?key=' . htmlspecialchars($_GET['key']) . '&s=' . htmlspecialchars($_GET['s']); } ?>" method="post" class="login-form">
 												<div class="form-group">
 													<label class="sr-only" for="form-username">Username</label>
-														<input type="text" name="login" class="form-control" placeholder="Login" >
+														<input type="text" name="login" class="form-control" placeholder="Login">
 													</div>
 													<div class="form-group">
 														<label class="sr-only" for="form-password">Password</label>
