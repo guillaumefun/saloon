@@ -6,14 +6,14 @@
   "author": {
     "name": "Scott Cheng",
     "email": "me@scottcheng.com",
-    "url": "http://scottcheng.com"
+    "url": "https://scottcheng.com"
   },
   "keywords": [
     "crop",
     "zoom",
     "image editor"
   ],
-  "homepage": "http://scottcheng.github.io/cropit",
+  "homepage": "https://scottcheng.github.io/cropit",
   "repository": {
     "type": "git",
     "url": "git://github.com/scottcheng/cropit.git"

@@ -10,7 +10,7 @@ description: Instructions on how to keep PhotoSwipe gallery up-do-date.
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/updates.html
+canonical_url: https://photoswipe.com/documentation/updates.html
 
 buildtool: true
 
@@ -27,11 +27,11 @@ Releases page has an [Atom feed](https://github.com/dimsemenov/PhotoSwipe/releas
 	<a href="https://ifttt.com/view_embed_recipe/230902-photoswipe-update-notification" target = "_blank" class="embed_recipe embed_recipe-l_30" id= "embed_recipe-230902"><img src= 'https://ifttt.com/recipe_embed_img/230902' alt="IFTTT Recipe: PhotoSwipe update notification connects feed to email" width="370px" style="max-width:100%"/></a><script async type="text/javascript" src= "//ifttt.com/assets/embed_recipe.js"></script>
 </div>
 
-Altervatively, you can follow [@PhotoSwipe on Twitter](http://twitter.com/photoswipe), or join my tiny email newsletter:
+Altervatively, you can follow [@PhotoSwipe on Twitter](https://twitter.com/photoswipe), or join my tiny email newsletter:
 
 <div>
 	<div id="mc_embed_signup" class="embed-form">
-	  <form action="http://dimsemenov.us1.list-manage.com/subscribe/post?u=ef6026d946a7b5d41d92c02e4&amp;id=54fae727da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+	  <form action="https://dimsemenov.us1.list-manage.com/subscribe/post?u=ef6026d946a7b5d41d92c02e4&amp;id=54fae727da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
 	    <p>Get notified about important update or new release.</p>
 	    <div class="mc-field-group">
 	      <input type="email" value="" name="EMAIL" placeholder="Your email" class="required email" id="mce-EMAIL">

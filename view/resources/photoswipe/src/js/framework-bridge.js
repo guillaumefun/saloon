@@ -150,7 +150,7 @@ var framework = {
 			var ua = navigator.userAgent;
 
 			// Detect if device is iPhone or iPod and if it's older than iOS 8
-			// http://stackoverflow.com/a/14223920
+			// https://stackoverflow.com/a/14223920
 			// 
 			// This detection is made because of buggy top/bottom toolbars
 			// that don't trigger window.resize event.
@@ -168,7 +168,7 @@ var framework = {
 
 			// Detect old Android (before KitKat)
 			// due to bugs related to position:fixed
-			// http://stackoverflow.com/questions/7184573/pick-up-the-android-version-in-the-browser-by-javascript
+			// https://stackoverflow.com/questions/7184573/pick-up-the-android-version-in-the-browser-by-javascript
 			
 			var match = ua.match(/Android\s([0-9\.]*)/);
 			var androidversion =  match ? match[1] : 0;
@@ -229,7 +229,7 @@ var framework = {
 
 		// Detect SVG support
 		features.svg = !!document.createElementNS && 
-						!!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+						!!document.createElementNS('https://www.w3.org/2000/svg', 'svg').createSVGRect;
 
 		framework.features = features;
 

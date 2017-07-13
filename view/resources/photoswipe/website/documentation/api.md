@@ -10,7 +10,7 @@ description: Public methods, properties and events of PhotoSwipe JavaScript imag
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/api.html
+canonical_url: https://photoswipe.com/documentation/api.html
 
 buildtool: true
 

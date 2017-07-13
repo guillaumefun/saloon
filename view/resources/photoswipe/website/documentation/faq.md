@@ -10,7 +10,7 @@ description: Frequently asked questions and known issues about PhotoSwipe image 
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/faq.html
+canonical_url: https://photoswipe.com/documentation/faq.html
 
 buildtool: true
 
@@ -22,9 +22,9 @@ markdownpage: true
 
 ### <a name="image-size"></a> I'm unable to predefine image size, what to do?
 
-Use another gallery script ([1](http://dimsemenov.com/plugins/magnific-popup/), [2](http://dimsemenov.com/plugins/royal-slider/gallery/)), or find a way:
+Use another gallery script ([1](https://dimsemenov.com/plugins/magnific-popup/), [2](https://dimsemenov.com/plugins/royal-slider/gallery/)), or find a way:
 
-- You can read size of an image by downloading only small part of it ([PHP version](http://stackoverflow.com/questions/4635936/super-fast-getimagesize-in-php), [Ruby](https://github.com/sdsykes/fastimage), [Node.js](http://stackoverflow.com/a/20111234/331460)).
+- You can read size of an image by downloading only small part of it ([PHP version](https://stackoverflow.com/questions/4635936/super-fast-getimagesize-in-php), [Ruby](https://github.com/sdsykes/fastimage), [Node.js](https://stackoverflow.com/a/20111234/331460)).
 - You can store size of an image directly in its filename and parse it on frontend during PhotoSwipe initialization (`gettingData` event in API section). 
 - Most CMS store size of an image in a database and have API to retrieve it.
 - Most web API (Facebook, 500px, Instagram, Flickr, Twitter, YouTube, Vimeo etc.) return a size of images.
@@ -41,7 +41,7 @@ I strongly recommend to display thumbnails that match aspect ratio of large imag
 
 I'll try to explain why this is not implemented yet. There are two ways to make expanding area animation:
 
-1. Animate `clip` property. But [it forces Paint](http://csstriggers.com/#clip) each time, which makes animations jerky.
+1. Animate `clip` property. But [it forces Paint](https://csstriggers.com/#clip) each time, which makes animations jerky.
 2. Wrap an image that expands with two divs that have `overflow:hidden` and reposition them via `transform:translate` during the animation so they clip it at right parts. This method does not force Paint or Layout, but requires two additional elements in markup of each slide. Test prototype showed that it works smooth only on high-end mobile devices (like Nexus 5 with Chrome). Maybe some day I'll implement it.
 
 
@@ -61,7 +61,7 @@ Note that this is an experimental feature, for now it doesn't allow to scroll th
 5. Listen for the `updateScrollOffset` event and add the template's bounding rect to the offset.
 6. `init()` the PhotoSwipe.
 
-[**Live example on CodePen &rarr;**](http://codepen.io/dimsemenov/pen/JogxWM)
+[**Live example on CodePen &rarr;**](https://codepen.io/dimsemenov/pen/JogxWM)
 
 ```html
 <div style="position: relative;" class="parent">
@@ -101,15 +101,15 @@ photoSwipe.init();
 to make URLs to a single image look like this:
 
 ```
-http://example.com/#&gid=1&pid=custom-first-id
-http://example.com/#&gid=1&pid=custom-second-id
+https://example.com/#&gid=1&pid=custom-first-id
+https://example.com/#&gid=1&pid=custom-second-id
 ```
 
 instead of:
 
 ```
-http://example.com/#&gid=1&pid=1
-http://example.com/#&gid=1&pid=2
+https://example.com/#&gid=1&pid=1
+https://example.com/#&gid=1&pid=2
 ```
 
 ... enable options `history:true, galleryPIDs:true` and add `pid` (unique picture identifier) property to slide objects (`pid` can be an integer or a string), for example:
@@ -132,7 +132,7 @@ var slides = [
 ];
 ```
 
-- Note that PhotoSwipe does not execute any code until you initialize and open it. That's why on initial page load you need to parse the URL by yourself. Default code from the [Getting Started](http://photoswipe.com/documentation/getting-started.html#dom-to-slide-objects) section of documentation includes this functionality (check `photoswipeParseHash` function if you need some modification).
+- Note that PhotoSwipe does not execute any code until you initialize and open it. That's why on initial page load you need to parse the URL by yourself. Default code from the [Getting Started](https://photoswipe.com/documentation/getting-started.html#dom-to-slide-objects) section of documentation includes this functionality (check `photoswipeParseHash` function if you need some modification).
 - Option `galleryPIDs` is available since PhotoSwipe v4.0.8 ([option description](options.html#galleryPIDs)).
 
 
@@ -160,11 +160,11 @@ In much more rare cases crash can occur if you open PhotoSwipe during some proce
 Each time PhotoSwipe gets an update - [GitHub releases](https://github.com/dimsemenov/PhotoSwipe/releases) page is updated with details. 
 Releases page has an [Atom feed](https://github.com/dimsemenov/PhotoSwipe/releases.atom), you may setup email notifications when feed is updated [using IFTTT](https://ifttt.com/recipes/230902-photoswipe-update-notification).
 
-Also, you may join my [email newsletter](http://dimsemenov.com/subscribe.html?i=pswp) (sent 3-4 times a year), follow [@PhotoSwipe on Twitter](http://twitter.com/photoswipe), and star/watch [PhotoSwipe on GitHub](https://github.com/dimsemenov/PhotoSwipe/).
+Also, you may join my [email newsletter](https://dimsemenov.com/subscribe.html?i=pswp) (sent 3-4 times a year), follow [@PhotoSwipe on Twitter](https://twitter.com/photoswipe), and star/watch [PhotoSwipe on GitHub](https://github.com/dimsemenov/PhotoSwipe/).
 
 ### <a name="wordpress-release"></a> When WordPress plugin will be released?
 
-Plugin is under development and will be released in 2015. To get notified [subscribe to my newsletter](http://dimsemenov.com/subscribe.html?i=pswp-wp).
+Plugin is under development and will be released in 2015. To get notified [subscribe to my newsletter](https://dimsemenov.com/subscribe.html?i=pswp-wp).
 
 
 ### <a name="can-i-use-in-theme"></a> I want to use PhotoSwipe in WordPress/Magento/Joomla... template, can I?
@@ -174,7 +174,7 @@ Yes, you can use PhotoSwipe in a free or commercial themes without any limitatio
 
 <div style="margin-top:30px;"><p>Know how this page can be improved? Found a grammatical mistake? <a href="https://github.com/dimsemenov/PhotoSwipe/blob/master/website/documentation/responsive-images.md">Please suggest an edit!</a></p></div>
 
-<iframe src="http://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
 
 <style type="text/css">
 body {

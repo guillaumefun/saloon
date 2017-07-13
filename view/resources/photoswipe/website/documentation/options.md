@@ -10,7 +10,7 @@ description: Complete list of PhotoSwipe options (including PhotoSwipeUI_Default
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/options.html
+canonical_url: https://photoswipe.com/documentation/options.html
 
 buildtool: true
 
@@ -77,11 +77,11 @@ getThumbBoundsFn: function(index) {
 
 
 	// Good guide on how to get element coordinates:
-	// http://javascript.info/tutorial/coordinates
+	// https://javascript.info/tutorial/coordinates
 }
 ```
 
-If dimensions of your small thumbnail don't match dimensions of large image, consider enabling zoom+fade transition. You can do this by adding option `showHideOpacity:true` (try adding it to [above CodePen](http://codepen.io/dimsemenov/pen/ZYbPJM) to test how it looks). Or disable transition entirely by adding `hideAnimationDuration:0, showAnimationDuration:0`. [More info about this in FAQ](faq.html#different-thumbnail-dimensions).
+If dimensions of your small thumbnail don't match dimensions of large image, consider enabling zoom+fade transition. You can do this by adding option `showHideOpacity:true` (try adding it to [above CodePen](https://codepen.io/dimsemenov/pen/ZYbPJM) to test how it looks). Or disable transition entirely by adding `hideAnimationDuration:0, showAnimationDuration:0`. [More info about this in FAQ](faq.html#different-thumbnail-dimensions).
 
 If you want to "hide" small thumbnail during the animation use `opacity:0`, not `visibility:hidden` or `display:none`. Don't force Paint and Layout at the beginning of the animation to avoid lag.
 
@@ -224,7 +224,7 @@ If set to `false` disables history module (back button to close gallery, unique 
 
 ### `galleryUID` <code class="default">integer</code> <code class="default">1</code>
 
-Gallery unique ID. Used by History module when forming URL. For example, second picture of gallery with UID 1 will have URL: `http://example.com/#&gid=1&pid=2`.
+Gallery unique ID. Used by History module when forming URL. For example, second picture of gallery with UID 1 will have URL: `https://example.com/#&gid=1&pid=2`.
 
 
 ### <a name="galleryPIDs"></a> `galleryPIDs` <code class="default">boolean</code> <code class="default">false</code>
@@ -250,7 +250,7 @@ var slides = [
 ];
 ```
 
-... second slide will have URL `http://example.com/#&gid=1&pid=image-two`.
+... second slide will have URL `https://example.com/#&gid=1&pid=image-two`.
 
 Read more about how to implement custom PID in [the FAQ section](faq.html#custom-pid-in-url).
 
@@ -379,7 +379,7 @@ indexIndicatorSep: ' / ',
 shareButtons: [
 	{id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 	{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
-	{id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+	{id:'pinterest', label:'Pin it', url:'https://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
 	{id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
 ],
 {% endraw %}
@@ -413,6 +413,6 @@ parseShareButtonOut: function(shareButtonData, shareButtonOut) {
 
 Know how this page can be improved? Found a typo? [Suggest an edit!](https://github.com/dimsemenov/PhotoSwipe/blob/master/website/documentation/responsive-images.md)
 
-<iframe src="http://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
 
 

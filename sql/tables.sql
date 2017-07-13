@@ -1,6 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 4.4.10
--- http://www.phpmyadmin.net
+-- https://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
 -- Généré le :  Dim 23 Avril 2017 à 14:56

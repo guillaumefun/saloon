@@ -10,7 +10,7 @@ description: The complete guide on how to serve responsive images in PhotoSwipe.
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/responsive-images.html
+canonical_url: https://photoswipe.com/documentation/responsive-images.html
 
 buildtool: true
 

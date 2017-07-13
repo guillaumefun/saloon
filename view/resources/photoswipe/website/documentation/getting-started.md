@@ -10,7 +10,7 @@ description: PhotoSwipe image gallery getting started guide.
 
 addjs: true
 
-canonical_url: http://photoswipe.com/documentation/getting-started.html
+canonical_url: https://photoswipe.com/documentation/getting-started.html
 
 buildtool: true
 
@@ -24,7 +24,7 @@ First things that you should know before you start:
 - PhotoSwipe requires predefined image dimensions ([more about this](faq.html#image-size)).
 - If you use PhotoSwipe on non-responsive website &ndash; controls will be scaled on mobile (as the whole page is scaled). So you'll need to implement custom controls (e.g. single large close button in top right corner).
 - All code in the documentation is pure Vanilla JS and supports IE 8 and above. If your website or app uses some JavaScript framework (like jQuery or MooTools) or you don't need to support old browsers – feel free to simplify the code.
-- Avoid serving big images (larger than 2000x1500px) for mobile, as they will dramatically reduce animation performance and can cause crash (especially on iOS Safari). Possible solutions: [serve responsive images](responsive-images.html), or open image on a separate page, or use libraries that support image tiling (like [Leaflet](http://leafletjs.com/)) ([more in FAQ](faq.html#mobile-crash)).
+- Avoid serving big images (larger than 2000x1500px) for mobile, as they will dramatically reduce animation performance and can cause crash (especially on iOS Safari). Possible solutions: [serve responsive images](responsive-images.html), or open image on a separate page, or use libraries that support image tiling (like [Leaflet](https://leafletjs.com/)) ([more in FAQ](faq.html#mobile-crash)).
 
 ## <a name="initialization"></a> Initialization
 
@@ -34,33 +34,33 @@ You can find them in [dist/](https://github.com/dimsemenov/PhotoSwipe/tree/maste
 
 ```html
 <!-- Core CSS file -->
-<link rel="stylesheet" href="path/to/photoswipe.css"> 
+<link rel="stylesheet" href="path/to/photoswipe.css">
 
 <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
 	 In the folder of skin CSS file there are also:
-	 - .png and .svg icons sprite, 
+	 - .png and .svg icons sprite,
 	 - preloader.gif (for browsers that do not support CSS animations) -->
-<link rel="stylesheet" href="path/to/default-skin/default-skin.css"> 
+<link rel="stylesheet" href="path/to/default-skin/default-skin.css">
 
 <!-- Core JS file -->
-<script src="path/to/photoswipe.min.js"></script> 
+<script src="path/to/photoswipe.min.js"></script>
 
 <!-- UI JS file -->
-<script src="path/to/photoswipe-ui-default.min.js"></script> 
+<script src="path/to/photoswipe-ui-default.min.js"></script>
 ```
 
-It doesn't matter how and where will you include JS and CSS files. Code is executed only when you call `new PhotoSwipe()`. So feel free to defer loading of files if you don't need PhotoSwipe to be opened initially. 
+It doesn't matter how and where will you include JS and CSS files. Code is executed only when you call `new PhotoSwipe()`. So feel free to defer loading of files if you don't need PhotoSwipe to be opened initially.
 
 PhotoSwipe also supports AMD loaders (like RequireJS) and CommonJS, use them like so:
 
 ```javascript
-require([ 
-		'path/to/photoswipe.js', 
-		'path/to/photoswipe-ui-default.js' 
+require([
+		'path/to/photoswipe.js',
+		'path/to/photoswipe-ui-default.js'
 	], function( PhotoSwipe, PhotoSwipeUI_Default ) {
 
 	//  	var gallery = new PhotoSwipe( someElement, PhotoSwipeUI_Default ...
-	//  	gallery.init() 
+	//  	gallery.init()
 	//  	...
 
 });
@@ -68,7 +68,7 @@ require([
 
 And also, you can install it via Bower (`bower install photoswipe`), or [NPM](https://www.npmjs.com/package/photoswipe) (`npm install photoswipe`).
 
-### <a name="init-add-pswp-to-dom"></a>Step 2: add PhotoSwipe (.pswp) element to DOM 
+### <a name="init-add-pswp-to-dom"></a>Step 2: add PhotoSwipe (.pswp) element to DOM
 
 You can add HTML code dynamically via JS (directly before the initialization), or have it in the page initially (like it's done on the demo page). This code can be appended anywhere, but ideally before the closing `</body>`. You may reuse it across multiple galleries (as long as you use same UI class).
 
@@ -76,14 +76,14 @@ You can add HTML code dynamically via JS (directly before the initialization), o
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-	<!-- Background of PhotoSwipe. 
+	<!-- Background of PhotoSwipe.
 		 It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
 
 	<!-- Slides wrapper with overflow:hidden. -->
     <div class="pswp__scroll-wrap">
 
-		<!-- Container that holds slides. 
+		<!-- Container that holds slides.
 			PhotoSwipe keeps only 3 of them in the DOM to save memory.
 			Don't modify these 3 pswp__item elements, data is added later on. -->
 		<div class="pswp__container">
@@ -98,7 +98,7 @@ You can add HTML code dynamically via JS (directly before the initialization), o
 			<div class="pswp__top-bar">
 
 				<!--  Controls are self-explanatory. Order can be changed. -->
-				
+
 				<div class="pswp__counter"></div>
 
 				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
@@ -109,7 +109,7 @@ You can add HTML code dynamically via JS (directly before the initialization), o
 
 				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
-				<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+				<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
 				<!-- element will get class pswp__preloader--active when preloader is running -->
 				<div class="pswp__preloader">
 					<div class="pswp__preloader__icn">
@@ -121,12 +121,12 @@ You can add HTML code dynamically via JS (directly before the initialization), o
 			</div>
 
 	        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-				<div class="pswp__share-tooltip"></div> 
+				<div class="pswp__share-tooltip"></div>
 	        </div>
 
 			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
 			</button>
-			
+
 			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
 			</button>
 
@@ -190,7 +190,7 @@ At the end you should get something like this:
 
 <div class="codepen-embed">
 	<p data-height="600" data-theme-id="10447" data-slug-hash="gbadPv" data-default-tab="result" data-user="dimsemenov" class='codepen'>
-		<a href="http://codepen.io/dimsemenov/pen/gbadPv/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
+		<a href="https://codepen.io/dimsemenov/pen/gbadPv/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
 	</p>
 	<!-- <script async src="//assets.codepen.io/assets/embed/ei.js"></script> -->
 </div>
@@ -200,7 +200,7 @@ At the end you should get something like this:
 
 Each object in the array should contain data about slide, it can be anything that you wish to display in PhotoSwipe - path to image, caption string, number of shares, comments, etc.
 
-By default PhotoSwipe uses just 5 properties: `src` (path to image), `w` (image width), `h` (image height), `msrc` (path to small image placeholder, large image will be loaded on top), `html` (custom HTML, [more about it](custom-html-in-slides.html)). 
+By default PhotoSwipe uses just 5 properties: `src` (path to image), `w` (image width), `h` (image height), `msrc` (path to small image placeholder, large image will be loaded on top), `html` (custom HTML, [more about it](custom-html-in-slides.html)).
 
 During the navigation, PhotoSwipe adds its own properties to this object (like `minZoom` or `loaded`).
 
@@ -223,18 +223,18 @@ var slides = [
 
 		title: 'Image Caption'  // used by Default PhotoSwipe UI
 								// if you skip it, there won't be any caption
-								
+
 
 		// You may add more properties here and use them.
 		// For example, demo gallery uses "author" property, which is used in the caption.
 		// author: 'John Doe'
-		
+
 	},
 
 	// slide 2
 	{
-		src: 'path/to/image2.jpg', 
-		w: 600, 
+		src: 'path/to/image2.jpg',
+		w: 600,
 		h: 600
 
 		// etc.
@@ -253,16 +253,16 @@ You may dynamically define slide object properties directly before PhotoSwipe re
 Let's assume that you have a list of links/thumbnails that look like this ([more info about markup of gallery](seo.html)):
 
 ```html
-<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+<div class="my-gallery" itemscope itemtype="https://schema.org/ImageGallery">
 
-	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	<figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
 		<a href="large-image.jpg" itemprop="contentUrl" data-size="600x400">
 		    <img src="small-image.jpg" itemprop="thumbnail" alt="Image description" />
 		</a>
 		<figcaption itemprop="caption description">Image caption</figcaption>
 	</figure>
 
-	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	<figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
 		<a href="large-image.jpg" itemprop="contentUrl" data-size="600x400">
 		    <img src="small-image.jpg" itemprop="thumbnail" alt="Image description" />
 		</a>
@@ -286,7 +286,7 @@ Here is pure Vanilla JS implementation with IE8 support:
 ```javascript
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-	// parse slide data (url, title, size ...) from DOM elements 
+	// parse slide data (url, title, size ...) from DOM elements
 	// (children of gallerySelector)
 	var parseThumbnailElements = function(el) {
 		var thumbElements = el.childNodes,
@@ -301,13 +301,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 			figureEl = thumbElements[i]; // <figure> element
 
-			// include only element nodes 
+			// include only element nodes
 			if(figureEl.nodeType !== 1) {
 				continue;
 			}
 
 			linkEl = figureEl.children[0]; // <a> element
-			
+
 			size = linkEl.getAttribute('data-size').split('x');
 
 			// create slide object
@@ -317,18 +317,18 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 				h: parseInt(size[1], 10)
 			};
 
-			
+
 
 			if(figureEl.children.length > 1) {
 				// <figcaption> content
-				item.title = figureEl.children[1].innerHTML; 
+				item.title = figureEl.children[1].innerHTML;
 			}
- 
+
 			if(linkEl.children.length > 0) {
 				// <img> thumbnail element, retrieving thumbnail url
 				item.msrc = linkEl.children[0].getAttribute('src');
-			} 
-		   
+			}
+
 			item.el = figureEl; // save link to element for getThumbBoundsFn
 			items.push(item);
 		}
@@ -366,8 +366,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 			index;
 
 		for (var i = 0; i < numChildNodes; i++) {
-			if(childNodes[i].nodeType !== 1) { 
-				continue; 
+			if(childNodes[i].nodeType !== 1) {
+				continue;
 			}
 
 			if(childNodes[i] === clickedListItem) {
@@ -432,7 +432,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 				// See Options -> getThumbBoundsFn section of documentation for more info
 				var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
 					pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-					rect = thumbnail.getBoundingClientRect(); 
+					rect = thumbnail.getBoundingClientRect();
 
 				return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
 			}
@@ -442,8 +442,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 		// PhotoSwipe opened from URL
 		if(fromURL) {
 	    	if(options.galleryPIDs) {
-	    		// parse real index when custom PIDs are used 
-	    		// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+	    		// parse real index when custom PIDs are used
+	    		// https://photoswipe.com/documentation/faq.html#custom-pid-in-url
 	    		for(var j = 0; j < items.length; j++) {
 	    			if(items[j].pid == index) {
 	    				options.index = j;
@@ -496,15 +496,15 @@ Example on CodePen (`focus` & `history` options are disabled due to embed issues
 
 <div class="codepen-embed">
 	<p data-height="600" data-theme-id="10447" data-slug-hash="ZYbPJM" data-default-tab="result" data-user="dimsemenov" class='codepen'>
-		<a href="http://codepen.io/dimsemenov/pen/ZYbPJM/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
+		<a href="https://codepen.io/dimsemenov/pen/ZYbPJM/" target="_blank"><strong>View example on CodePen &rarr;</strong></a>
 	</p>
 </div>
 
 Tip: you may download example from CodePen to play with it locally (`Edit on CodePen` -> `Share` -> `Export .zip`).
 
-- If you're using markup that differs from this example, you'll need to edit function `parseThumbnailElements`. 
-- If you're not experienced in pure JavaScript and don't know how to parse DOM, refer to [QuirksMode](http://quirksmode.org/dom/core/#gettingelements) and [documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element.getElementsByTagName).
-- Note that IE8 does not support HTML5 `<figure>` and `<figcaption>` elements, so you need to include [html5shiv](https://github.com/aFarkas/html5shiv) in `<head>` section ([cdnjs hosted version](http://cdnjs.com/libraries/html5shiv/) is used in example):
+- If you're using markup that differs from this example, you'll need to edit function `parseThumbnailElements`.
+- If you're not experienced in pure JavaScript and don't know how to parse DOM, refer to [QuirksMode](https://quirksmode.org/dom/core/#gettingelements) and [documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element.getElementsByTagName).
+- Note that IE8 does not support HTML5 `<figure>` and `<figcaption>` elements, so you need to include [html5shiv](https://github.com/aFarkas/html5shiv) in `<head>` section ([cdnjs hosted version](https://cdnjs.com/libraries/html5shiv/) is used in example):
 
     ```html
     <!--[if lt IE 9]>
@@ -515,22 +515,9 @@ Tip: you may download example from CodePen to play with it locally (`Edit on Cod
 
 ## About
 
-Please [keep script updated](faq.html#keep-updated), report bugs through [GitHub](https://github.com/dimsemenov/PhotoSwipe), suggest features on [UserVoice](https://photoswipe.uservoice.com/forums/275302-feature-requests-ideas) and ask questions through [StackOverflow](http://stackoverflow.com/questions/ask?tags=javascript,photoswipe).
+Please [keep script updated](faq.html#keep-updated), report bugs through [GitHub](https://github.com/dimsemenov/PhotoSwipe), suggest features on [UserVoice](https://photoswipe.uservoice.com/forums/275302-feature-requests-ideas) and ask questions through [StackOverflow](https://stackoverflow.com/questions/ask?tags=javascript,photoswipe).
 
 Know how this page can be improved? Found a typo? [Suggest an edit!](https://github.com/dimsemenov/PhotoSwipe/blob/master/website/documentation/getting-started.md)
 
 
-<iframe src="http://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<iframe src="https://ghbtns.com/github-btn.html?user=dimsemenov&amp;repo=photoswipe&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="155" height="30" style=""></iframe>
