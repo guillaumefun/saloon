@@ -13,7 +13,7 @@ if(!empty($content) && !empty($convers_id)){
 
 	$messages = getMessageByConversID($convers_id, 10);
 
-	$_SESSION['last_msg'][$convers_id] = $messages[0]['id'];
+	$_SESSION['nb_msg'][$convers_id] = countMessages( $convers_id );
 
 	$messages = array_reverse($messages);
 

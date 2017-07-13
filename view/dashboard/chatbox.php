@@ -11,7 +11,6 @@
 		</div>
 		<div class="chatbox-logs">
 			<?php 
-				require('../../model/messages.model.php');
 
 				$messages_arr = getMessageByConversID($saloon_id, 10);
 				$_SESSION['nb_msg'][$saloon_id] = countMessages( $saloon_id );
@@ -57,4 +56,13 @@
 
 </div>
 
+<!-- framework pour remplacer les liens dans un texte par des liens html -->
+<script src="../resources/linkifyjs/linkify.min.js"></script>
+<script src="../resources/linkifyjs/linkify-jquery.min.js"></script>
+<script src="../resources/linkifyjs/linkify-html.js"></script>
+
+
 <script src="../javascript/chatbox.js"></script>
+
+
+

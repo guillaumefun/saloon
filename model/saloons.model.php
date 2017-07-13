@@ -68,6 +68,27 @@ function allowedProfile( $id ){
 
 }
 
+function allowedSaloon( $saloon_id ){
+
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$req = $db -> prepare('SELECT * FROM saloons WHERE id = :id');
+	$req -> execute(array('id' => $saloon_id));
+	$result = $req -> fetch();
+
+	if(!empty($result)){
+
+		$members = explode('|', $result['members']);
+		foreach ($members as $member ) {
+			if($member == $_SESSION['id']){ 
+				return true;
+			}
+		}
+	}
+
+	return false;
+
+}
+
 function getSaloon( $id ){
 
 	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');

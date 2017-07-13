@@ -5,10 +5,11 @@ error_reporting(E_ALL);
 session_start();
 
 require('../model/messages.model.php');
+require('../model/saloons.model.php');
 
 $convers_id = htmlspecialchars($_POST['convers_id']);
 
-if(!empty($convers_id)){
+if(!empty($convers_id) && allowedSaloon($convers_id)){
 
 	$nb_msg_total = countMessages( $convers_id );
 

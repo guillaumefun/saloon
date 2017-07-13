@@ -64,7 +64,7 @@ function loadMessages(){
                             if(text != "-1"){  
                                 text = text.split("<|aaa|>"); // un truc que personne risque de mettre dans une conversation
 
-                                $('.chatbox-logs').append(text[0]);
+                                $('.chatbox-logs').append(linkifyHtml(text[0]));
                                 $('.more_msg').attr('id', text[1]);
                                 var sound = new Audio("../resources/sound/chat-sound.mp3");
                                 sound.play();
@@ -94,12 +94,16 @@ function loadMoreMessages(){
                     data: { 'convers_id': convers_id, 'nb_msg': nb_msg },
                     success: function(text){      
 
-                            var objDiv = $('.chatbox-logs')[0];
-                            height = $('.chatbox-logs').height();
+                            // var objDiv = $('.chatbox-logs')[0];
+                            // var height = $('.chatbox-logs').scrollHeight;
+                            var firstMsg = $('.msg:first');
                             $('.more_msg').remove();
-                            $('.chatbox-logs').prepend(text); // ajoute avant tous les autres 
-                            if(text != ''){
-                                objDiv.scrollTop = height;
+                            $('.chatbox-logs').prepend(linkifyHtml(text)); // ajoute avant tous les autres avec prepend et chang les urls en liens html avec linkify
+                            if(text !== ''){
+                                
+                                var obj = $('.chatbox-logs')[0];
+                                // obj.scrollTop = obj.scrollHeight - height;
+                                obj.scrollTop = firstMsg.offset().top;
                             }
                         
                     },
@@ -109,7 +113,44 @@ function loadMoreMessages(){
 
 }
 
+function isMoreMessage(obj){
+
+    setInterval(function(){
+
+        $('.msg-side').each(function(){
+
+            var convers_id = $(this).attr('id').split('_');
+            convers_id = convers_id[1];
+            div = $(this);
+
+            $.ajax({type: "POST",
+                url: "../../controller/is_more_message.controller.php",
+                data: { 'convers_id': convers_id },
+                success: function(text){
+                    if( text !== '' ){
+                        $('#side_' + convers_id).html('');
+                        $('#side_' + convers_id).html('<span class="glyphicon glyphicon-comment" aria-hidden="true"><span class="badge">' + text + '</span>');
+                        var sound = new Audio("../resources/sound/chat-sound.mp3");
+                        sound.play();
+                    }
+
+                },
+            });
+
+        });
+
+    }, 5000); // Charge toutes les 5 secondes
+
+}
+
+$(document).ready(function(){
+
+    $('.chatbox-logs').linkify();
+
+});
+
 loadMessages();
+isMoreMessage();
 
 $('.chatbox-logs').scroll(function(){
     if($('.chatbox-logs')[0].scrollTop == 0){
@@ -128,8 +169,9 @@ function saveMessage(e){
                 url: "../../controller/add_message.controller.php",
                 data: { 'content': content, 'convers_id': convers_id },
                 success: function(text){                    
-                    $('.chatbox-logs').html(text);
+                    $('.chatbox-logs').html(linkifyHtml(text)); 
                     $('.msg_input').val('');
+                    $('.chatbox-logs').scrollTop($('.chatbox-logs')[0].scrollHeight);
                 },
       });
 
@@ -145,7 +187,7 @@ $('.msg_input').keydown(function(e){
     }
 });
 
-// lance la sauvegarde du message quand on appuie sur le bouton envoyer
+// lance la sauvegarde du message quand on appuie sur le bouton envoye
 $('.send-btn').click(function(e){ 
     saveMessage($('.msg_input'));
 });

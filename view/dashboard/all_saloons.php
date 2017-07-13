@@ -4,6 +4,7 @@
 	require('../../model/bets.model.php');
 	require('../../model/rewards.model.php');
 	require('../../model/comments.model.php');
+	require('../../model/messages.model.php');
 	require('../../model/rewards_detail.model.php');
 	require('../../controller/functions.controller.php');
 
@@ -17,9 +18,11 @@
 				$count++;
 			}
 
+			$_SESSION['nb_msg'][$saloon['id']] = countMessages($saloon['id']);
+
 			?>
 			<li>
-				<a href="?s=<?php echo $saloon['id']; ?>"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?></p></a>
+				<a href="?s=<?php echo $saloon['id']; ?>" class="saloon_link"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?><div class="msg-side" id="side_<?php echo $saloon['id']; ?>"><span class="glyphicon glyphicon-comment" aria-hidden="true"></div></p></a>
 			</li>
 			<?php
 

@@ -126,6 +126,13 @@ _________________________________________________________*/
   margin-top: 0.3em;
 }
 
+.saloon_link{
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+
 /*media querries*/
 @media all and (max-width: 767px) {
   .mywellimg{
