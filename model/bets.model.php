@@ -13,7 +13,7 @@ require('users.model.php');
 // Fonction qui renvoie les paris de  chaque salons ordonnés par utilisateur
 function getBetsBySaloonID( $saloon_id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE saloon_id = :saloon_id');
 	$req -> execute(array(
 		'saloon_id' => $saloon_id
@@ -40,7 +40,7 @@ function getBetsBySaloonID( $saloon_id ){
 
 function getBetsFeed( $saloon_id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE saloon_id = :saloon_id');
 	$req -> execute(array(
 		'saloon_id' => $saloon_id
@@ -100,7 +100,7 @@ function getDateDelta( $date, $date_format = 'EU' ){ //  EU = sous la forme dd/m
 
 function getBets($saloon_id, $user_id){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE saloon_id = :saloon_id AND user = :user ORDER BY id DESC');
 	$req -> execute(array(
 		'saloon_id' => $saloon_id,
@@ -114,7 +114,7 @@ function getBets($saloon_id, $user_id){
 
 
 function getBet($id){
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE id = :id');
 	$req -> execute(array(
 		'id' => $id
@@ -126,7 +126,7 @@ function getBet($id){
 
 function getBetsByUserID($user_id){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user ORDER BY id DESC');
 	$req -> execute(array(
 		'user' => $user_id
@@ -138,7 +138,7 @@ function getBetsByUserID($user_id){
 
 function getDoneBetsCount($user_id){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM bets WHERE user = :user AND accomplished != :accomplished  ORDER BY id DESC');
 	$req -> execute(array(
 		'user' => $user_id,
@@ -151,7 +151,7 @@ function getDoneBetsCount($user_id){
 
 function createNewBet($name, $description, $deadline, $saloon_id){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare(' INSERT INTO bets( name, description, user, saloon_id, deadline, creation_date, modification_date) VALUES ( :name, :description, :user, :saloon_id, :deadline, NOW(), NOW()) ');
 	$req -> execute( array(	
 		'name' => $name,
@@ -165,7 +165,7 @@ function createNewBet($name, $description, $deadline, $saloon_id){
 
 function setAccomplished( $id, $nb_img, $story ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('UPDATE bets SET accomplished = :accomplished, nb_img = :nb_img, story = :story WHERE id = :id');
 	$req -> execute(array(
 		'accomplished' => date("j/m/Y"),

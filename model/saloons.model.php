@@ -10,7 +10,7 @@
 
 function getAllSaloons(){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM saloons');
 	$req -> execute();
 
@@ -33,7 +33,7 @@ function getAllSaloons(){
 
 			$i ++;
 		}
-		
+
 	}
 
 	return $saloons;
@@ -43,7 +43,7 @@ function getAllSaloons(){
 // renvoie true si l'utilisateur connecté est autorisé à voir le profil de l'utilisateur dont on donne l'id en argument
 function allowedProfile( $id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM saloons');
 	$req -> execute();
 
@@ -54,14 +54,14 @@ function allowedProfile( $id ){
 		$is_member = false;
 		$is_member2 = false;
 		foreach ($members as $member ) {
-			if($member == $_SESSION['id']){ 
+			if($member == $_SESSION['id']){
 				$is_member = true;
 			}else if($member == $id){
 				$is_member2 = true;
 			}
 		}
 		if($is_member && $is_member2) return true;
-		
+
 	}
 
 	return false;
@@ -70,7 +70,7 @@ function allowedProfile( $id ){
 
 function allowedSaloon( $saloon_id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM saloons WHERE id = :id');
 	$req -> execute(array('id' => $saloon_id));
 	$result = $req -> fetch();
@@ -79,7 +79,7 @@ function allowedSaloon( $saloon_id ){
 
 		$members = explode('|', $result['members']);
 		foreach ($members as $member ) {
-			if($member == $_SESSION['id']){ 
+			if($member == $_SESSION['id']){
 				return true;
 			}
 		}
@@ -91,7 +91,7 @@ function allowedSaloon( $saloon_id ){
 
 function getSaloon( $id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM saloons WHERE id = :id');
 	$req -> execute(array(
 		'id' => $id
@@ -105,14 +105,14 @@ function getSaloon( $id ){
 
 function createNewSaloon( $name, $members){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare(' INSERT INTO saloons( name, members, creation_date, modification_date) VALUES ( :name, :members, NOW(), NOW()) ');
-	$req -> execute( array(	
+	$req -> execute( array(
 		'name' => $name,
 		'members' => $members
 		) );
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM saloons WHERE name = :name AND members = :members');
 	$req -> execute(array(
 		'name' => $name,
@@ -144,9 +144,9 @@ function addMember( $name, $saloon_id ){
 
 	$m = $saloon['members'] . '|' . $user['id'];
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare(' UPDATE saloons SET members = :members WHERE id = :id');
-	$req -> execute( array(	
+	$req -> execute( array(
 		'members' => $m,
 		'id' => $saloon_id
 		) );
@@ -161,9 +161,9 @@ function addMemberByID($user_id , $saloon_id){
 
 	$m = $saloon['members'] . '|' . $user_id;
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare(' UPDATE saloons SET members = :members WHERE id = :id');
-	$req -> execute( array(	
+	$req -> execute( array(
 		'members' => $m,
 		'id' => $saloon_id
 		) );

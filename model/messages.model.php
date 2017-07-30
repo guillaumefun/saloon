@@ -8,7 +8,7 @@
 
 function getMessageByConversID( $convers_id, $nb_msg ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM messages WHERE convers_id = :convers_id ORDER BY id DESC LIMIT ' . $nb_msg);
 	$req -> execute(array(
 		'convers_id' => $convers_id
@@ -22,7 +22,7 @@ function getMessageByConversID( $convers_id, $nb_msg ){
 // retourne le nombre de message dans une conversation
 function countMessages( $convers_id ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare('SELECT * FROM messages WHERE convers_id = :convers_id');
 	$req -> execute(array(
 		'convers_id' => $convers_id
@@ -35,7 +35,7 @@ function countMessages( $convers_id ){
 
 function addMessage( $content, $convers_id, $user_id, $user_name ){
 
-	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root');
+	$db = new PDO('mysql:host=localhost;dbname=saloon;charset=utf8', 'root' , 'root'   );
 	$req = $db -> prepare(' INSERT INTO messages( content, convers_id, user_id, user_name, creation_date, modification_date) VALUES ( :content, :convers_id, :user_id, :user_name, NOW(), NOW()) ');
 	$req -> execute( array(	
 		'content' => $content, 

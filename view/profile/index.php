@@ -43,7 +43,7 @@ if(!isset($_SESSION['id'])){
 		<!-- POPUP pour changer la photo de profil -->
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-10">
 					<div id="profilePicture" style="display: none">
 						<div id="profilePictureB">
 							<form action="../../controller/save_profile_picture.controller.php?s=<?php  echo $saloon_id; ?>" method="post" enctype="multipart/form-data" onsubmit="return save()">
@@ -80,7 +80,7 @@ if(!isset($_SESSION['id'])){
 				<div class="col-sm-2 mywellimg">
 					<img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $_SESSION['id'] . '/profile.png')) echo $_SESSION['id'] . '/profile.png?' . rand(99,9999); else echo 'profile.jpg'; ?>">
 				</div>
-
+				
 				<div class="col-sm-10">
 
 					<h3><?php echo strtoupper($user['login']); ?></h3>
