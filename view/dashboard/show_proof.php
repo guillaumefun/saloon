@@ -1,4 +1,6 @@
-<hr>
+<div class='row'>
+	<hr>
+</div>
 <p><?php echo $bet['story']; ?></p>
 <div class="gallery" itemscope>
 

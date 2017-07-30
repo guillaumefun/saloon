@@ -2,15 +2,16 @@
 <div class="row">
 
 	<div class="chatbar">
-		<p><?php echo strtoupper($saloon_info['name']); ?></p>
+		<p><?php echo strtoupper($saloon_info['name']); ?><span class="glyphicon glyphicon-chevron-up"></span></p>
 	</div>
 
 	<div class="chatbox" hidden>
 		<div class="chatbox-header">
-			<p><?php echo strtoupper($saloon_info['name']); ?></p>
+			<p><?php echo strtoupper($saloon_info['name']); ?><span class="glyphicon glyphicon-remove"></span></p>
+
 		</div>
 		<div class="chatbox-logs">
-			<?php 
+			<?php
 
 				$messages_arr = getMessageByConversID($saloon_id, 10);
 				$_SESSION['nb_msg'][$saloon_id] = countMessages( $saloon_id );
@@ -24,7 +25,7 @@
 					</div>
 
 				<?php
-				
+
 
 
 				foreach ($messages_arr as $msg){
@@ -63,6 +64,3 @@
 
 
 <script src="../javascript/chatbox.js"></script>
-
-
-

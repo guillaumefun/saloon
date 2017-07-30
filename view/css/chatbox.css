@@ -2,30 +2,53 @@
     width: 300px;
     height: 30px;
     min-width: 50px;
-    background: #d7e5ee;
+    background: #F6F7F9;
     position: fixed;
     bottom: 0;
-    right: 5px;
+    right: 2em;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 0px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.glyphicon-chevron-up{
+  float: right;
+  padding-top: 0.1em;
+  padding-right: 0.3em;
 }
 
 .chatbox{
     width: 300px;
     height: 320px;
     min-width: 50px;
-    background: #eff7fc;
+    background: #ffffff;
     position: fixed;
+    border-radius: 0.3em;
     bottom: 0;
-    right: 5px;
+    right: 2em;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
 .chatbox-header{
     height: 30px;
     width: 100%;
-    background: #d7e5ee;
+    background: #F6F7F9;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+}
+.chatbox-header:hover{
+  cursor: pointer;
 }
 
 .chatbox-header p, .chatbar p{
     padding: 5px;
+    padding-top: 0.4em;
+    padding-left: 0.4em;
+}
+.glyphicon-remove{
+  float: right;
+  padding-top: 0.2em;
+  padding-right: 0.3em;
 }
 
 .chatbox-logs{
@@ -57,7 +80,7 @@
     height: 40px;
     border: 2px solid #eee;
     margin-bottom: 10px;
-    border-radius: 3px;
+    border-radius: 0px;
     resize: none;
     padding: 10px;
     color: #333;
@@ -92,7 +115,7 @@
 }
 
 .msg .msg-content{
-    width: 70%;
+    width: 80%;
     margin: 5px 10px 0;
     background: #1ddced;
     border-radius: 10px;
@@ -191,7 +214,7 @@
     {
         display: none !important;
     }
-    
+
     .chat-popup
     {
         display: none !important;
@@ -215,7 +238,7 @@ body
     border: 1px solid rgba(29, 49, 91, .3);
 }
 
-.sidebar-name 
+.sidebar-name
 {
     padding-left: 10px;
     padding-right: 10px;

@@ -1,4 +1,4 @@
-<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon; 
+<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon;
 	$saloon_info = getSaloon( $saloon_id );
 ?>
 
@@ -47,7 +47,7 @@
 					<input type="submit" class="btn btn-primary" value="Ajouter des nouveaux membres">
 				</div>
 			</div>
-			
+
 		</form>
 
 		<div class="row form-group">
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 
@@ -71,22 +71,26 @@
 	</div>
 </div>
 
-<h2 class="text-center"><?php $saloon_info = getSaloon($saloon_id);
-	echo strtoupper($saloon_info['name']);
-	$saloon_members = explode('|', $saloon_info['members']);
- ?></h2>
- <a href="#" data-toggle="tooltip" title="<?php echo printSaloonMembers( $saloon_info['members'] ); ?>"><p class="text-center"><?php echo count($saloon_members); if( count($saloon_members) > 1 ){ echo " membres"; }else{ echo " membre"; } ?></p></a>
-
-<div class="row noMarg">
+<div class="row">
+	<div class="col-md-12">
+			<p class="titresaloon"><?php $saloon_info = getSaloon($saloon_id);
+				echo strtoupper($saloon_info['name']) . ' ';
+				$saloon_members = explode('|', $saloon_info['members']);
+			 ?><a class="membreslink"href="#" data-toggle="tooltip" title="<?php echo printSaloonMembers( $saloon_info['members'] ); ?>"><?php echo '(' . count($saloon_members); if( count($saloon_members) > 1 ){ echo " membres)"; }else{ echo " membre)"; } ?></a>
+		 </p>
+	</div>
+</div>
+<div class="row balance">
 	<div class="col-md-8">
 		<input class="form-control" placeholder="Balance ton projet !" onfocus="startProject();">
 	</div>
 </div>
+
+
 </br>
 
 
 <?php
-
 $saloon = getBetsFeed( $saloon_id );
 if(count($saloon) == 0){
 	?>
@@ -104,7 +108,6 @@ if(count($saloon) == 0){
 }
 foreach ($saloon as $bet) {
 	$count = 0;
-
 	$author = getUser($bet['user']);
 		?>
 
@@ -120,7 +123,6 @@ foreach ($saloon as $bet) {
 
 						<div class="col-sm-10">
 							<h4><?php echo $bet['name'];
-
 							$delta_dead = getDateDelta($bet['deadline']);
 							$creation_date = explode(' ', $bet['creation_date']);
 							$delta_creation = getDateDelta($creation_date[0], 'US');
@@ -129,7 +131,6 @@ foreach ($saloon as $bet) {
 									<span class="label label-info">Nouveau</span>
 								<?php
 							}
-
 							if($delta_dead < 4 && $delta_dead >= 0 && $bet['accomplished'] == '0'){
 								?>
 									<span class="label label-danger">Quasi dead</span>
@@ -139,26 +140,20 @@ foreach ($saloon as $bet) {
 									<span class="label label-success">Fait <3</span>
 								<?php
 							}
-
-
 							if($delta_dead < 0 && $bet['accomplished'] == '0'){
 								?>
 									<span class="label label-danger">DEAD</span>
 								<?php
 							}
-
-
 							?></h4>
 							<h6>Deadline : <?php echo $bet['deadline']; ?></h6>
 							<h5><?php echo $bet['description']; ?></h5>
 
 							<?php
 								if($bet['user'] == $_SESSION['id'] && $delta_dead >= 0 && $bet['accomplished'] == '0'){
-
 									?>
 										<a href="../close_bet.view.php?bet_id=<?php echo $bet['id']; ?>"><button class="btn btn-default btncouilles">J'ai porté mes couilles !</button></a>
 									<?php
-
 								}
 							?>
 						</div>
@@ -241,14 +236,12 @@ foreach ($saloon as $bet) {
 								<div class="col-md-12 rewa">
 									<?php echo $reward['name'] . "  "; ?><a href="#" data-toggle="tooltip" title="<?php echo printRewardDetail( $reward_detail ); ?>" id="quantity_<?php echo $reward['id']; ?>" class="rewards"><?php echo $reward_quantity; ?></a>
 									<?php
-
 									if($bet['accomplished'] == '0'){
 										?>
 									<button class="btn btn-default btn-xs plus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-plus"></span></button>
 									<button class="btn btn-default btn-xs minus" value="<?php echo $reward['id']; ?>"><span class="glyphicon glyphicon-minus"></span></button>
 									<?php
 										}
-
 									?>
 								</div>
 
@@ -267,7 +260,6 @@ foreach ($saloon as $bet) {
 						</div>
 
 						<?php
-
 						if($bet['accomplished'] == '0'){
 										?>
 
@@ -289,6 +281,4 @@ foreach ($saloon as $bet) {
 		<?php
 		$count++;
 	}
-
-
 ?>
