@@ -22,7 +22,7 @@
 
 			?>
 			<li>
-				<a href="?s=<?php echo $saloon['id']; ?>" class="saloon_link"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?><div class="msg-side" id="side_<?php echo $saloon['id']; ?>"><span class="glyphicon glyphicon-comment" aria-hidden="true"></div></p></a>
+				<a href="?s=<?php echo $saloon['id']; ?>" class="saloon_link"><p class=""><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><?php echo $saloon['name']; ?><div class="msg-side" id="side_<?php echo $saloon['id']; ?>"></div></p></a>
 			</li>
 			<?php
 

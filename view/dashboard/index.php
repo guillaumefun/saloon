@@ -39,7 +39,7 @@ if(!isset($_SESSION['id'])){
 				<a onclick="HelpBox('creerProjet')" class="">Crée toi un projet!</a>
 				<a onclick="HelpBox('ajoutMembre')" class="">Ajoute des membres<3</a>
 				<?php } ?>
-				<a href="/controller/logout.controller.php" class="">Déconnexion</a>
+				<a href="/saloon/controller/logout.controller.php" class="">Déconnexion</a>
 			</div>
 		</div><!--end sidebar-wrapper-->
 
@@ -84,7 +84,7 @@ if(!isset($_SESSION['id'])){
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<?php include('messages.php'); ?>
-						<?php 
+						<?php
 						if( isset($default_saloon)){
 							include('saloon.php');
 						}else{

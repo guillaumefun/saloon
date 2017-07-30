@@ -1,4 +1,4 @@
-<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon; 
+<?php $saloon_id = (isset($_GET['s'])) ? $_GET['s'] : $default_saloon;
 	$saloon_info = getSaloon( $saloon_id );
 ?>
 
@@ -47,7 +47,7 @@
 					<input type="submit" class="btn btn-primary" value="Ajouter des nouveaux membres">
 				</div>
 			</div>
-			
+
 		</form>
 
 		<div class="row form-group">
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 
@@ -71,17 +71,22 @@
 	</div>
 </div>
 
-<h2 class="text-center"><?php $saloon_info = getSaloon($saloon_id);
-	echo strtoupper($saloon_info['name']);
-	$saloon_members = explode('|', $saloon_info['members']);
- ?></h2>
- <a href="#" data-toggle="tooltip" title="<?php echo printSaloonMembers( $saloon_info['members'] ); ?>"><p class="text-center"><?php echo count($saloon_members); if( count($saloon_members) > 1 ){ echo " membres"; }else{ echo " membre"; } ?></p></a>
-
-<div class="row noMarg">
+<div class="row">
+	<div class="col-md-12">
+			<p class="titresaloon"><?php $saloon_info = getSaloon($saloon_id);
+				echo strtoupper($saloon_info['name']) . ' ';
+				$saloon_members = explode('|', $saloon_info['members']);
+			 ?><a class="membreslink"href="#" data-toggle="tooltip" title="<?php echo printSaloonMembers( $saloon_info['members'] ); ?>"><?php echo '(' . count($saloon_members); if( count($saloon_members) > 1 ){ echo " membres)"; }else{ echo " membre)"; } ?></a>
+		 </p>
+	</div>
+</div>
+<div class="row balance">
 	<div class="col-md-8">
 		<input class="form-control" placeholder="Balance ton projet !" onfocus="startProject();">
 	</div>
 </div>
+
+
 </br>
 
 

@@ -14,11 +14,12 @@ body.theSaloon{
 /*CREER SON PROJET + AJOUTER MEMBRES
 _____________________________________________________________*/
 #creerProjet, #ajoutMembre, #ProfilePicture, #link_copied{
-  position: fixed;
-  top: 15vh;
-  width: 51%;
-  margin: auto;
+  position:absolute;
+  width: 100%;
   z-index: 9999999999999;
+}
+#ajoutMembre{
+  margin-left: -140px;  /*recentrage car bar sur gauche...*/
 }
 #creerProjetB, #ajoutMembreB, #ProfilePictureB{
   background: #FFFFFF;
@@ -33,10 +34,43 @@ _____________________________________________________________*/
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100em;
+  /*min-height: 100em;*/
   height: 100%;
 }
 
+/*ANIMATION*/
+#creerProjet, #ajoutMembre, #ProfilePicture, #link_copied{
+  top: -40vh;
+  animation: drop 0.5s ease forwards;
+}
+#rideau{
+  animation: rideau 0.5s ease forwards;
+}
+@keyframes rideau{
+  0%{opacity: 0;}
+  100%{opacity: 0.6;}
+}
+@keyframes drop{
+  0%{opacity: 0;}
+  70%{transform: translateY(40vh)}
+  100%{transform: translateY(35vh); opacity: 1;}
+}
+
+
+/*Titre saloon + nbr de membres + bar création projet
+_________________________________________________________*/
+p.titresaloon{
+  font-size: 1.7em;
+  font-family: 'Lato';
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+a.membreslink{
+  font-size: 0.7em;
+}
+.balance{
+  margin-right: -30px;
+}
 
 /*BLOCK de GAUCHE
 _________________________________________________________*/
@@ -186,8 +220,9 @@ _________________________________________________________*/
   float: left;
 }
 .gallery img {
-  width: 100%;
+  width: 45%;
   height: auto;
+  border-radius: 3px;
 }
 .gallery figure {
   display: block;
@@ -229,5 +264,3 @@ _________________________________________________________*/
 
 
 }
-
-
