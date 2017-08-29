@@ -118,36 +118,43 @@ foreach ($saloon as $bet) {
 					<div class="row mywell"> <!-- pp + infos projet-->
 						<div class="col-sm-2 mywellimg">
 							<a href="../profile/?id=<?php echo $author['id'] . "&s=" . $saloon_id; ?>" ><img class="img-responsive img-circle" src="../../img/profiles/<?php if(is_file('../../img/profiles/' . $bet['user'] . '/profile.png')) echo $bet['user'] . '/profile.png?' . rand(99,9999); else echo '/profile.jpg'; ?>"></a>
-							<h5 class="text-center"><?php echo $author['login']; ?></h5>
+							<h5 class="text-center pseudo"><?php echo $author['login']; ?></h5>
 						</div>
 
 						<div class="col-sm-10">
-							<h4><?php echo $bet['name'];
+							<h4><?php echo $bet['name']; ?></h4>
+							<?php
 							$delta_dead = getDateDelta($bet['deadline']);
 							$creation_date = explode(' ', $bet['creation_date']);
 							$delta_creation = getDateDelta($creation_date[0], 'US');
 							if($delta_creation > -3 && $delta_creation < 1){
-								?>
+								?><h4 class='labou'>
 									<span class="label label-info">Nouveau</span>
+									</h4>
 								<?php
 							}
 							if($delta_dead < 4 && $delta_dead >= 0 && $bet['accomplished'] == '0'){
 								?>
+									<h4 class='labou'>
 									<span class="label label-danger">Quasi dead</span>
+									</h4>
 								<?php
 							}else if($bet['accomplished'] != '0'){
 								?>
-									<span class="label label-success">Fait <3</span>
+									<h4 class='labou'>
+									<span class="label label-success">Fait!</span>
+									</h4>
 								<?php
 							}
 							if($delta_dead < 0 && $bet['accomplished'] == '0'){
-								?>
+								?><h4 class='labou'>
 									<span class="label label-danger">DEAD</span>
+									</h4>
 								<?php
 							}
-							?></h4>
+							?>
 							<h6>Deadline : <?php echo $bet['deadline']; ?></h6>
-							<h5><?php echo $bet['description']; ?></h5>
+							<h5 class='descri'><?php echo $bet['description']; ?></h5>
 
 							<?php
 								if($bet['user'] == $_SESSION['id'] && $delta_dead >= 0 && $bet['accomplished'] == '0'){

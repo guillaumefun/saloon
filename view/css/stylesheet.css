@@ -56,12 +56,11 @@ img.papyGif{
 /* Tout le site */
 hr {
     border: 0;
-
     clear: both;
     display: block;
     width: 100%;
     background-color: #ddd;
-    height: 0.5px;
+    height: 0.8px;
 }
 
 .text-center{

@@ -49,8 +49,11 @@ body {
   padding: 0;
   list-style: none;
 }
-@media(min-width:768px) {
-  #wrapper {
+@media(max-width:768px) {
+  #wrapper.toggled {
+    padding-left: 0px;
+  }
+  /*#wrapper {
     padding-left: 0;
   }
   #wrapper.toggled {
@@ -69,5 +72,5 @@ body {
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
-  }
+  }*/
 }

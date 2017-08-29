@@ -35,7 +35,7 @@ _____________________________________________________________*/
   left: 0;
   width: 100%;
   /*min-height: 100em;*/
-  height: 100%;
+  height: 900%;
 }
 
 /*ANIMATION*/
@@ -56,6 +56,23 @@ _____________________________________________________________*/
   100%{transform: translateY(35vh); opacity: 1;}
 }
 
+@media all and (max-width: 767px) {
+  #creerProjet, #ajoutMembre, #ProfilePicture, #link_copied{
+    position:absolute;
+    width: 90%;
+  }
+  #ajoutMembre{
+    margin-left: -0px;  /*recentrage car bar sur gauche...*/
+  }
+
+  @keyframes drop{
+    0%{opacity: 0;}
+    70%{transform: translateY(30vh)}
+    100%{transform: translateY(25vh); opacity: 1;}
+  }
+}
+
+
 
 /*Titre saloon + nbr de membres + bar création projet
 _________________________________________________________*/
@@ -71,6 +88,25 @@ a.membreslink{
 .balance{
   margin-right: -30px;
 }
+
+/*media querries*/
+@media all and (max-width: 767px) {
+  p.titresaloon{
+    display: block;
+    text-align: center;
+
+  }
+  a.membreslink{
+    display: block;
+    text-align: center;
+  }
+  .balance{
+    margin-right: -15px;
+    margin-top: 0.7em;
+    }
+}
+
+
 
 /*BLOCK de GAUCHE
 _________________________________________________________*/
@@ -91,6 +127,11 @@ _________________________________________________________*/
   font-family: 'Kalam';
   font-weight: 700;
   font-size: 1.7em;
+  display: inline-block;
+}
+h4.labou{
+  display: inline-block;
+  margin-right: 0.3em;
 }
 .label{
   colo: #615f7f;
@@ -117,6 +158,23 @@ _________________________________________________________*/
 }
 .mywell h5{
   font-family: 'Lato', sans-serif;
+}
+h5.descri{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;     /* fallback */
+  max-height: 40px;      /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+h5.descri:hover{
+  max-height: 400000px;      /* fallback */
+  -webkit-line-clamp: 2000; /* number of lines to show */
+  cursor: default;
+}
+h5.pseudo{
+  margin-top: 0.4em;
 }
 .panel-default{ /*Commentaires*/
   border: none;
@@ -156,12 +214,11 @@ _________________________________________________________*/
   margin-bottom: 0;
 }
 .lol{
-  margin-bottom: 0.2em;
+  margin-bottom: -1em;
   margin-top: 0.3em;
 }
 
 .saloon_link{
-
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -170,21 +227,55 @@ _________________________________________________________*/
 /*media querries*/
 @media all and (max-width: 767px) {
   .mywellimg{
+    width: 50%;
+    margin: auto;
     padding: 2em;
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-bottom: 0.1em;
   }
   .mywell{
     padding: 0;
     padding-bottom: 1em;
+  }
+  .mywell h4{
+    font-size: 2em;
+    letter-spacing: -1px;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.1em;
+
+  }
+  .label{
+    display: inline-block;
+    margin-top: 0.4em;
+    padding: 0.6em;
+  }
+  h4.labou{
+    text-align: left;
+    display: inline;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .mywell h6{
+    font-size: 1em;
+  }
+  .mywell h5{
+  }
+  h5.descri{
+    max-height: 400000px;      /* fallback */
+    -webkit-line-clamp: 2000; /* number of lines to show */
+  }
+  h5.pseudo{
+    margin-top: 0.2em;
+    font-size: 1.2em;
+    font-style: italic;
   }
   .btncouilles{
     display: block;
     width: 100%;
   }
   .comm{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .nop{padding-right: 15px;}
   .nop2{padding-left: 15px;}
@@ -215,52 +306,65 @@ _________________________________________________________*/
 
 /* Gallerie
 -----------------------------------*/
-.gallery {
-  width: 100%;
-  float: left;
+hr{
+  margin-bottom: 15px;
 }
-.gallery img {
-  width: 45%;
-  height: auto;
-  border-radius: 3px;
+/*Comment show proof*/
+.proofcomment{
+  font-style: italic;
+  color: #737373;
+  font-family: 'Lato', sans-serif;
+  display: inline;
+  margin-bottom: -0.5em;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;     /* fallback */
+  max-height: 40px;      /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.proofcomment:hover{
+  max-height: 400000px;      /* fallback */
+  -webkit-line-clamp: 2000; /* number of lines to show */
+  cursor: default;
+}
+.gallery {
+  margin-bottom: -0.5em;
+  display: inline;
 }
 .gallery figure {
+  width: 7%;
   display: block;
   float: left;
   margin: 0 5px 5px 0;
-  width: 100px;
+  margin-bottom: 0;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid #ddd;
 }
 .gallery figcaption {
   display: none;
 }
 
-/*media querries*/
 @media all and (max-width: 767px) {
-  .mywellimg{
-    padding: 2em;
-    padding-left: 3em;
-    padding-right: 3em;
+  .oola{
+    margin-left: 15px;
   }
-  .mywell{
-    padding: 0;
-    padding-bottom: 1em;
+  .gallery{
   }
-  .btncouilles{
+  .gallery figure {
+    width: 12%;
     display: block;
-    width: 100%;
   }
-  .comm{
-    margin-top: 15px;
-    margin-bottom: 15px;
+  .proofcomment{
   }
-  .nop{padding-right: 15px;}
-  .nop2{padding-left: 15px;}
-  .nop2 button{
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-  }
-  .bd{padding: 0;}
+}
+
 
 
 }
