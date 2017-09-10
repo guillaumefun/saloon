@@ -3,6 +3,18 @@
 <!-- <link href="https://www.golegal.be/backend/view/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
  -->
 <meta name="viewport" content="width=device-width" />
+<link rel="manifest" href="/manifest.json">
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(["init", {
+    appId: "37aeaf38-a492-4dd8-b071-96599ef3883f",
+    autoRegister: false,
+    notifyButton: {
+      enable: false 
+    }
+  }]);
+</script>
 <link href="/view/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/view/css/stylesheet.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>

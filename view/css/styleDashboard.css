@@ -11,6 +11,36 @@ body.theSaloon{
 .noMarg{
   margin-right:0; margin-left:0;
 }
+/*NOTIFICATION
+_____________________________________________________________*/
+#subscribe-link{
+  position: absolute;
+  font-size: 4em;
+  letter-spacing: -3px;
+  font-family: 'Lato';
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  right: 0.3em;
+  top: 1em;
+  z-index: 999999999999;
+}
+@media (max-width: 767px)
+{
+  #subscribe-link {
+    position: absolute;
+    font-size: 2.2em;
+    top: 0em;
+    right: 0.4em;
+  }
+}
+#imgnotif{
+  width: 3em;
+  position: fixed;
+  right: 3em;
+  bottom: 3em;
+  z-index: 6;
+}
 /*CREER SON PROJET + AJOUTER MEMBRES
 _____________________________________________________________*/
 #creerProjet, #ajoutMembre, #ProfilePicture, #link_copied{

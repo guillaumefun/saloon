@@ -1,11 +1,13 @@
 <?php
-	
+
 	ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 	require('../model/users.model.php');
 	require('../model/saloons.model.php');
+	require('../view/dashboard/notifications.php');
+
 
 
 	$names = htmlspecialchars($_POST['logins']);
@@ -50,6 +52,10 @@ error_reporting(E_ALL);
 		}
 
 	}
+
+	//notif
+	$key = 'key'.$saloon;
+	sendMessageTag($key, 'Il y a un nouveau PELO dans ton saloon!');
 
 	header('Location: ../view/dashboard/?s=' . $saloon . '&c=' . $url_code);
 
